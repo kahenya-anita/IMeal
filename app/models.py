@@ -1,13 +1,16 @@
 from . import db
 from werkzeug.security import generate_password_hash,check_password_hash
 
-class User(db.Model):
+class User(UserMixin,db.Model):
     __tablename__ = 'users'
 
     id = db.Column(db.Integer,primary_key = True)
-    username = db.Column(db.String(255))
+    username = db.Column(db.String(255),index = True)
+    email = db.Column(db.String(255),unique = True,index = True)
     role_id = db.Column(db.Integer,db.ForeignKey('roles.id'))
-    pass_secure  = db.Column(db.String(255))
+    pass_secure = db.Column(db.String(255))
+
+    orders = db.relationship('Orders', backref='user',lazy="dynamic")
 
     @property
     def password(self):
@@ -34,3 +37,32 @@ class Role(db.Model):
 
     def __repr__(self):
         return f'User {self.name}'
+
+class Meals(db.Model):
+    __tablename__="meals"
+
+    id = db.Column(db.Integer,primary_key = True)
+    name = db.Column(db.String(255))
+    ingredients = db.Column(db.String(255))
+    cost = db.Column(db.Integer)
+    deleted = db.Column(db.Boolean)
+
+    menuday = db.relationship('Menuday',backref = 'meals',lazy="dynamic")
+    orders = db.relationship('Orders',backref = 'meals',lazy="dynamic")
+    #picture  = db.Column(db.String(255))
+
+class Menuday(db.Model):
+    __tablename__="menu for the given day"
+
+    id = db.Column(db.Integer,primary_key = True)
+    mealdate = db.Column(db.String(255))
+    meal_id = db.Column(db.Integer,db.ForeignKey('meals.id'))
+
+class Orders(db.Model):
+    __tablename__="menu for the given day"
+
+    id = db.Column(db.Integer,primary_key = True)
+    user_id = db.Column(db.Integer,db.ForeignKey('user.id'))
+    meal_id = db.Column(db.Integer,db.ForeignKey('meals.id'))
+
+    #userId foreignkey, mealid, mealcost
