@@ -1,8 +1,10 @@
 from flask import render_template, request, redirect,url_for
 from . import main
+from flask_login import login_required
 
 # Views
 @main.route('/')
+
 def index():
 
     '''
@@ -11,6 +13,7 @@ def index():
     return render_template('index.html')
 
 @main.route('/orders/<int:orders_id>')
+@login_required
 def orders(movie_id):
 
     '''
