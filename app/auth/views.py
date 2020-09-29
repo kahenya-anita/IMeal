@@ -33,7 +33,7 @@ def login():
     title = "imeal login"
     return render_template('auth/login.html',login_form = login_form,title=title)
 
-    @auth.route('/logout')
+@auth.route('/logout')
 @login_required
 def logout():
     logout_user()
