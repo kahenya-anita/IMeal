@@ -1,5 +1,6 @@
 from . import db
 from werkzeug.security import generate_password_hash,check_password_hash
+from flask_login import UserMixin
 
 class User(UserMixin,db.Model):
     __tablename__ = 'users'
@@ -52,17 +53,17 @@ class Meals(db.Model):
     #picture  = db.Column(db.String(255))
 
 class Menuday(db.Model):
-    __tablename__="menu for the given day"
+    __tablename__="menuday"
 
     id = db.Column(db.Integer,primary_key = True)
     mealdate = db.Column(db.String(255))
     meal_id = db.Column(db.Integer,db.ForeignKey('meals.id'))
 
 class Orders(db.Model):
-    __tablename__="menu for the given day"
+    __tablename__="orders"
 
     id = db.Column(db.Integer,primary_key = True)
-    user_id = db.Column(db.Integer,db.ForeignKey('user.id'))
+    user_id = db.Column(db.Integer,db.ForeignKey('users.id'))
     meal_id = db.Column(db.Integer,db.ForeignKey('meals.id'))
 
     #userId foreignkey, mealid, mealcost
