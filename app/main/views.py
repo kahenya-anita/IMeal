@@ -11,7 +11,6 @@ def index():
     return render_template('index.html')
 
 @main.route('/orders/<int:orders_id>')
-@login_required
 def orders(movie_id):
 
     '''
