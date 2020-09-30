@@ -20,8 +20,7 @@ def login():
 
         flash('Invalid username or Password')
 
-
-
+    return redirect(url_for("auth/login.html", login_form=login_form))
 
 @auth.route('/logout')
 
@@ -29,7 +28,6 @@ def logout():
     logout_user()
     return redirect(url_for("main.index"))
 
-    
 
 @auth.route('/register',methods = ["GET","POST"])
 def register():
@@ -42,7 +40,4 @@ def register():
         mail_message('Welcome to Imeals','email/welcome_user',user.email,user=user)
         return redirect(url_for('auth.login'))
         title = "New Account"
-    return render_template('auth/register.html',registration_form = form)
-
-
-
+    return render_template("auth/register.html",registration_form = form)
