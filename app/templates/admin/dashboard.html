@@ -1,0 +1,10 @@
+{% extends 'admin-base.html' %}
+
+<!-- Styles block -->
+
+{% block styles%} {{ super() }}
+<link rel="stylesheet" href="{{url_for('static',filename='css/admin/dashboard.css')}}" />
+{% endblock %}
+{% block content%}
+<h1>Dashboard</h1>
+{% endblock%}
