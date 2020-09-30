@@ -52,17 +52,17 @@ def update_profile(uname):
     return render_template('profile/update.html',form =form)
 
 
-@main.route('user/admin/dashboard/<uname>', methods=['GET','POST'])
+@main.route('/user/admin/dashboard/<uname>', methods=['GET','POST'])
 @login_required
 def admin_dashboard():
     return render_template('admin/dashboard.html')
 
-@main.route('user/admin/menu/<uname>', methods=['GET','POST'])
+@main.route('/user/admin/menu/<uname>', methods=['GET','POST'])
 @login_required
 def admin_menu():
     return render_template('admin/menu.html')
 
-@main.route('user/admin/orders/<uname>', methods=['GET','POST'])
+@main.route('/user/admin/orders/<uname>', methods=['GET','POST'])
 @login_required
 def admin_orders():
     return render_template('admin/orders.html')

@@ -5,7 +5,7 @@ from .forms import RegistrationForm,LoginForm
 from .. import db
 from flask_admin import Admin, AdminIndexView
 from flask_admin.contrib.sqla import ModelView
-from flask_login import Usermixin,login_user,logout_user,login_required
+from flask_login import login_user,logout_user,login_required
 from ..email import mail_message
 
 

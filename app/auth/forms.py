@@ -4,7 +4,7 @@ from wtforms.validators import Required,Email,EqualTo
 from ..models import User
 from wtforms import StringField,PasswordField,BooleanField,SubmitField
 import email_validator
-r
+
 
 
 class RegistrationForm(FlaskForm):

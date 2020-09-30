@@ -12,6 +12,11 @@ class Orders(db.Model):
     user_id = db.Column(db.Integer,db.ForeignKey('users.id'))
     meal_id = db.Column(db.Integer,db.ForeignKey('meals.id'))
     
+@login_manager.user_loader
+def load_user(user_id):
+    return User.query.get(int(user_id))
+
+    
 class User(UserMixin,db.Model):
     __tablename__ = 'users'
 
