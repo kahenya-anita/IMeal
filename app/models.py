@@ -1,5 +1,6 @@
 from . import db
 from werkzeug.security import generate_password_hash,check_password_hash
+from . import login_manager
 from flask_login import UserMixin,LoginManager
 from flask_admin import Admin,AdminIndexView
 from flask_admin.contrib.sqla import ModelView
@@ -10,6 +11,7 @@ class Orders(db.Model):
     id = db.Column(db.Integer,primary_key = True)
     user_id = db.Column(db.Integer,db.ForeignKey('users.id'))
     meal_id = db.Column(db.Integer,db.ForeignKey('meals.id'))
+    
 class User(UserMixin,db.Model):
     __tablename__ = 'users'
 
@@ -64,12 +66,15 @@ def password(self):
     raise AttributeError('You cannot read the password attribute')
 
     @password.setter
-    def password(self, password):
+    def password(self, password)
         self.password_hash = generate_password_hash(password)
+
 
 
     def verify_password(self,password):
         return check_password_hash(self.password_hash,password)
+
+    
 
     def __repr__(self):
         return f'User {self.name}'

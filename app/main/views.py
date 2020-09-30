@@ -1,11 +1,12 @@
 from flask import render_template, request, redirect,url_for
-from flask_login import LoginManager,login_user
+from flask_login import LoginManager,login_user,login_required
 from . import main
 from .forms import UpdateProfile
 from .. import db
 
 
 @main.route('/')
+
 def index():
 
     '''
@@ -14,6 +15,7 @@ def index():
     return render_template('index.html')
 
 @main.route('/orders/<int:orders_id>')
+@login_required
 def orders(movie_id):
 
     '''

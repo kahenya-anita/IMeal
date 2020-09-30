@@ -29,7 +29,7 @@ end
 # unset irrelevant variables
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "/home/abuga/Documents/Python/Groupwork/IMeal/virtual"
+set -gx VIRTUAL_ENV "/home/joe/Desktop/IMeal/virtual"
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH

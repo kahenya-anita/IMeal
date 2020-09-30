@@ -5,7 +5,7 @@ from .forms import RegistrationForm,LoginForm
 from .. import db
 from flask_admin import Admin, AdminIndexView
 from flask_admin.contrib.sqla import ModelView
-from flask_login import Usermixin,login_user
+from flask_login import Usermixin,login_user,logout_user,login_required
 from ..email import mail_message
 
 
@@ -20,8 +20,6 @@ def login():
 
         flash('Invalid username or Password')
 
-    title = "Imeal login"
-    return render_template('auth/login.html',login_form = login_form,title=title)
 
 
 
@@ -45,5 +43,6 @@ def register():
         return redirect(url_for('auth.login'))
         title = "New Account"
     return render_template('auth/register.html',registration_form = form)
+
 
 
