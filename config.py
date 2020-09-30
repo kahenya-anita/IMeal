@@ -6,10 +6,9 @@ class Config:
     General configuration parent class
     '''
     SECRET_KEY = os.environ.get('SECRET_KEY')
-    #SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://joe:Teflondon@localhost/imeal'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://abuga:password@localhost/imeal'
     #heroku database below
-    SQLALCHEMY_DATABASE_URI ='postgres://xdjubzsbiwlagr:77a57069ee08f8d45f109a8c1a123436ba9739abdc7cb2279e7e81546c99bb18@ec2-34-233-43-35.compute-1.amazonaws.com:5432/d7mhdn9uq07bgv'
-
+    #SQLALCHEMY_DATABASE_URI ='postgres+psycopg2://lfgiafilewplkg:652bbbf039b88462ef1ce2fc405a8a4a434e53c197f30b192ca0ff51e636234b@ec2-3-210-255-177.compute-1.amazonaws.com:5432/d8jd2q7ohb0q7k'
 
     SQLALCHEMY_TRACK_MODIFICATIONS = True
 
