@@ -1,8 +1,9 @@
-from flask import render_template, request, redirect,url_for
+from flask import render_template, request, redirect,url_for,abort
 from flask_login import LoginManager,login_user,login_required
 from . import main
 from .forms import UpdateProfile
 from .. import db
+from ..models import User,Meals,Menuday,Orders
 
 
 @main.route('/')
@@ -53,16 +54,24 @@ def update_profile(uname):
 
 
 @main.route('/user/admin/dashboard/<uname>', methods=['GET','POST'])
-@login_required
-def admin_dashboard():
-    return render_template('admin/dashboard.html')
+def admin_dashboard(uname):
+    uname = 'Abdi'
+    title='Dashboard'
+    total_orders = Orders.query.count()
+    orders = Orders.query.all()
+    total_sales = 0
+    for order in orders:
+        meal_cost = order.meals.cost
+        total_sales +=meal_cost
+
+    return render_template('admin/dashboard.html',uname=uname,title=title,total_orders = total_orders,total_sales=total_sales)
 
 @main.route('/user/admin/menu/<uname>', methods=['GET','POST'])
 @login_required
-def admin_menu():
+def admin_menu(uname):
     return render_template('admin/menu.html')
 
 @main.route('/user/admin/orders/<uname>', methods=['GET','POST'])
 @login_required
-def admin_orders():
+def admin_orders(uname):
     return render_template('admin/orders.html')
