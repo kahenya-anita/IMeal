@@ -4,7 +4,12 @@ from flask_login import UserMixin,LoginManager
 from flask_admin import Admin,AdminIndexView
 from flask_admin.contrib.sqla import ModelView
 
+class Orders(db.Model):
+    __tablename__="orders"
 
+    id = db.Column(db.Integer,primary_key = True)
+    user_id = db.Column(db.Integer,db.ForeignKey('users.id'))
+    meal_id = db.Column(db.Integer,db.ForeignKey('meals.id'))
 class User(UserMixin,db.Model):
     __tablename__ = 'users'
 
@@ -69,6 +74,9 @@ def password(self):
     def __repr__(self):
         return f'User {self.name}'
 
+
+
+
 class Meals(db.Model):
     __tablename__="meals"
 
@@ -89,11 +97,6 @@ class Menuday(db.Model):
     mealdate = db.Column(db.String(255))
     meal_id = db.Column(db.Integer,db.ForeignKey('meals.id'))
 
-class Orders(db.Model):
-    __tablename__="orders"
 
-    id = db.Column(db.Integer,primary_key = True)
-    user_id = db.Column(db.Integer,db.ForeignKey('users.id'))
-    meal_id = db.Column(db.Integer,db.ForeignKey('meals.id'))
 
     #userId foreignkey, mealid, mealcost

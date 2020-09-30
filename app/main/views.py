@@ -1,4 +1,5 @@
 from flask import render_template, request, redirect,url_for
+from flask_login import LoginManager,login_user
 from . import main
 from .forms import UpdateProfile
 from .. import db
