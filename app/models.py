@@ -40,7 +40,6 @@ class Role(db.Model):
     name = db.Column(db.String(255))
     users = db.relationship('User',backref = 'role',lazy="dynamic")
 
-
     def __repr__(self):
         return f'User {self.name}'
 
@@ -64,11 +63,16 @@ class Menuday(db.Model):
     mealdate = db.Column(db.String(255))
     meal_id = db.Column(db.Integer,db.ForeignKey('meals.id'))
 
+    ##function to return the meals for a given date
+
 class Orders(db.Model):
     __tablename__="orders"
 
     id = db.Column(db.Integer,primary_key = True)
     user_id = db.Column(db.Integer,db.ForeignKey('users.id'))
     meal_id = db.Column(db.Integer,db.ForeignKey('meals.id'))
+
+    ##add a total cost Column
+
 
     #userId foreignkey, mealid, mealcost
