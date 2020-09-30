@@ -1,7 +1,7 @@
 from flask import render_template, redirect, url_for, flash,request
 from . import auth
 from ..models import User
-from .forms import RegistrationForm,LoginForm
+from .forms import RegistrationForm, LoginForm
 from .. import db
 from flask_admin import Admin, AdminIndexView
 from flask_admin.contrib.sqla import ModelView
@@ -20,7 +20,7 @@ def login():
 
         flash('Invalid username or Password')
 
-    return redirect(url_for("auth/login.html", login_form=login_form))
+    return render_template("auth/login.html", login_form=login_form)
 
 @auth.route('/logout')
 
