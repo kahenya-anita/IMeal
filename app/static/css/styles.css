@@ -1,5 +1,5 @@
 .branding {
-    background-image: url("photos/background.png");
+    background-image: url("/static/photos/background.png");
     padding-top: 30px;
     min-height: 70px;
     border-bottom: #C67417 3px solid;
