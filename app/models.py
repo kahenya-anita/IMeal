@@ -1,8 +1,10 @@
-rom . import db
+from . import db
 from werkzeug.security import generate_password_hash,check_password_hash
-from flask_login import UserMixin
+from flask_login import UserMixin,LoginManager
+from flask_admin import Admin,AdminIndexView
+from flask_admin.contrib.sqla import ModelView
 
-class User(db.Model):
+
 class User(UserMixin,db.Model):
     __tablename__ = 'users'
 
@@ -16,11 +18,12 @@ class User(UserMixin,db.Model):
 
     orders = db.relationship('Orders', backref='user',lazy="dynamic")
 
+
     @property
     def password(self):
 
-    def __repr__(self):
-        return f'User {self.name}'
+        def __repr__(self):
+            return f'User {self.name}'
     
 
 class Role(db.Model):
@@ -36,7 +39,7 @@ class Role(db.Model):
     bio = db.Column(db.String)
     password_secure = db.Column(db.String(255))
 
-class MyModalView(ModalView):
+class MyModelView(ModelView):
     def is_accessible(self):
         return current_user.is_authenticated
 
@@ -47,12 +50,13 @@ class MyAdminIndexView(AdminIndexView):
     def is_accessible(self):
         return current_user.is_authenticated
 
-admin = Admin(app, index_view=MyAdminIndexView())
+admin = Admin(index_view=MyAdminIndexView())
 admin.add_view(ModelView(User, db.session))
 
-    @property
-    def password(self):
-        raise AttributeError('You cannot read the password attribute')
+
+@property
+def password(self):
+    raise AttributeError('You cannot read the password attribute')
 
     @password.setter
     def password(self, password):
