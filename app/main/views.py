@@ -1,11 +1,12 @@
 from flask import render_template, request, redirect,url_for
-from flask_login import LoginManager,login_user
+from flask_login import LoginManager,login_user,login_required
 from . import main
 from .forms import UpdateProfile
 from .. import db
 
 
 @main.route('/')
+
 def index():
 
     '''
@@ -14,6 +15,7 @@ def index():
     return render_template('index.html')
 
 @main.route('/orders/<int:orders_id>')
+@login_required
 def orders(movie_id):
 
     '''
@@ -48,3 +50,19 @@ def update_profile(uname):
         return redirect(url_for('.profile',uname=user.username))
 
     return render_template('profile/update.html',form =form)
+
+
+@main.route('user/admin/dashboard/<uname>', methods=['GET','POST'])
+@login_required
+def admin_dashboard():
+    return render_template('admin/dashboard.html')
+
+@main.route('user/admin/menu/<uname>', methods=['GET','POST'])
+@login_required
+def admin_menu():
+    return render_template('admin/menu.html')
+
+@main.route('user/admin/orders/<uname>', methods=['GET','POST'])
+@login_required
+def admin_orders():
+    return render_template('admin/orders.html')
