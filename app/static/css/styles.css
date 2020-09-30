@@ -1,213 +1,156 @@
-/*---------------------
-  Menu Section
------------------------*/
-.section-title {
-	text-align: center;
-	margin-bottom: 75px;
+.branding {
+    background-image: url("photos/background.png");
+    padding-top: 30px;
+    min-height: 70px;
+    border-bottom: #C67417 3px solid;
+    margin-bottom: 10px;
 }
 
-.section-title i {
-	display: block;
-	color: #8a8a8a;
-	font-size: 65px;
+.log {
+    float: right;
 }
 
-.section-title h2 {
-	font-size: 48px;
-	position: relative;
-	display: inline-block;
-	padding: 0 16px;
+body {
+    font: 15px/1.5 "Comic Sans MS", cursive, sans-serif;
+    padding: 0;
+    margin: 0;
+    background-color: #f4f4f4;
 }
 
-.section-title h2:after,
-.section-title h2:before {
-	position: absolute;
-	content: "";
-	width: 277px;
-	height: 1px;
-	background: #ffc515;
-	top: 32px;
+
+/* ----- Global ----- */
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
 }
 
-.section-title h2:before {
-	left: 100%;
+.dark {
+    padding: 15px;
+    background: #35424a;
+    color: #ffffff;
+    margin: auto;
 }
 
-.section-title h2:after {
-	right: 100%;
+.panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
 }
 
-.section-title.text-white i {
-	color: #fff;
+img {
+    border: 1px solid #ddd;
+    /* Gray border */
+    border-radius: auto;
+    /* Rounded border */
+    padding: 5px;
+    /* Some padding */
+    width: 150px;
+    /* Set a small width */
 }
 
-.section-title.st-no-style h2:after,
-.section-title.st-no-style h2:before {
-	display: none;
+
+/* Add a hover effect (blue shadow) */
+
+img:hover {
+    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
 }
 
-.set-bg {
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: top center;
+
+/* Style tab links */
+
+.tablink {
+    background-color: #35424a;
+    color: white;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 17px;
+    width: 25%;
 }
 
-.spad {
-	padding-top: 110px;
-	padding-bottom: 115px;
+.tablink:hover {
+    background-color: #777;
 }
 
-.text-white h1,
-.text-white h2,
-.text-white h3,
-.text-white h4,
-.text-white h5,
-.text-white h6,
-.text-white p,
-.text-white span,
-.text-white li,
-.text-white a {
-	color: #fff;
+
+/* Style the tab content (and add height:100% for full page content) */
+
+.tabcontent {
+    color: white;
+    display: none;
+    padding: 100px 20px;
+    height: 100%;
 }
 
-.rating i {
-	color: #fbb710;
+
+/* Style the buttons that are used to open and close the accordion panel */
+
+.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
 }
 
-.rating .is-fade {
-	color: #e0e3e4;
-}
-.menu-tab-nav.nav-tabs {
-	border-bottom: none;
-	text-align: center;
-	display: block;
-	margin-bottom: 90px;
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+
+.active,
+.accordion:hover {
+    background-color: #ccc;
 }
 
-.menu-tab-nav.nav-tabs .nav-item {
-	display: inline-block;
+
+/* Style the accordion panel. Note: hidden by default */
+
+.thumbnail {
+    overflow: hidden;
 }
 
-.menu-tab-nav.nav-tabs .nav-item .nav-link {
-	color: #fff;
-	border: none;
+.accordion:after {
+    content: '\02795';
+    /* Unicode character for "plus" sign (+) */
+    font-size: 13px;
+    color: #777;
+    float: right;
+    margin-left: 5px;
 }
 
-.menu-tab-nav.nav-tabs .nav-item .nav-link.active {
-	background-color: transparent;
-	border: none;
-	color: #ffc515;
+.active:after {
+    content: "\2796";
+    /* Unicode character for "minus" sign (-) */
 }
 
-.menu-tab-nav.nav-tabs .nav-item .nav-link:hover {
-	border: none;
+footer {
+    padding: 20px;
+    margin-top: 20px;
+    color: #C67417;
+    background-color: #35424a;
+    text-align: center;
 }
 
-.menu-section {
-	padding-bottom: 83px;
+
+/* Media Queries */
+
+@media(max-width: 768px) {
+    header #branding,
+    header nav {
+        float: none;
+        text-align: center;
+        width: 100%;
+    }
+    header {
+        padding-bottom: 20px;
+    }
 }
-
-.menu-dark .menu-item h5 {
-	color: #7e7e7e;
-}
-
-.menu-dark .menu-item p {
-	color: #b6b5b5;
-}
-
-.menu-dark .menu-item .menu-price {
-	color: #7e7e7e;
-}
-
-.menu-dark .menu-item .menu-price:after {
-	border-bottom: 2px dotted #dcdcdc;
-}
-
-.menu-item {
-	margin-bottom: 45px;
-}
-
-.menu-item h5 {
-	color: #fff;
-	margin-bottom: 8px;
-}
-
-.menu-item p {
-	font-size: 12px;
-	line-height: normal;
-	display: table-cell;
-	width: 222px;
-	padding-right: 18px;
-	font-style: italic;
-}
-
-.menu-item .mi-meta {
-	display: table;
-	width: 100%;
-}
-
-.menu-item .menu-price {
-	display: table-cell;
-	color: #fff;
-	text-align: right;
-	position: relative;
-	font-size: 17px;
-}
-
-.menu-item .menu-price:after {
-	position: absolute;
-	content: "";
-	width: calc(100% - 63px);
-	left: 0;
-	top: 50%;
-	margin-top: -1px;
-	border-bottom: 2px dotted rgba(255, 255, 255, 0.25);
-}
-
-/*---------------------
-  Footer Section
------------------------*/
-
-.footer-bg-area {
-	height: 553px;
-	position: relative;
-}
-
-.map-warp {
-	height: 417px;
-	background: #888;
-}
-
-.contact-form-area {
-	position: absolute;
-	width: 100%;
-	left: 0;
-	top: -212px;
-}
-
-.contact-form-warp {
-	background: #fff;
-	padding: 45px 95px 65px;
-}
-
-.contact-form-warp .section-title {
-	margin-bottom: 67px;
-}
-
-.contact-form input,
-.contact-form textarea {
-	width: 100%;
-	border: none;
-	background: #eff4f6;
-	padding: 10px 27px;
-	font-size: 12px;
-	height: 52px;
-	margin-bottom: 17px;
-}
-
-.contact-form textarea {
-	padding-top: 21px;
-	height: 190px;
-	margin-bottom: 25px;
-}
-
