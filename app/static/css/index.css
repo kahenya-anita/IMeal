@@ -13,12 +13,48 @@
 }
 
 
-body {
-    margin: 0;
-    padding: 0;
-    background-image: url('https://images.unsplash.com/photo-1516919549054-e08258825f80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80');
-    width: 100vw;
-    height: 100vh;
-    background-size: cover;
-    overflow-y: scroll;
+/*---------------------
+  Testimonials Section
+-----------------------*/
+
+.testimonials-slider {
+	padding-bottom: 115px;
+}
+
+.testimonials-slider .ts-item {
+	text-align: center;
+	padding: 0 22px 65px;
+}
+
+.testimonials-slider .ts-item .quota {
+	font-size: 24px;
+	margin-bottom: 24px;
+}
+
+.testimonials-slider .ts-item p {
+	margin-bottom: 50px;
+}
+
+.testimonials-slider .ts-item h6 span {
+	color: #ffc515;
+}
+
+.testimonials-slider .owl-dots:not(.owl-dots-number) {
+	position: absolute;
+	bottom: 48px;
+	left: -5px;
+	width: 100%;
+	text-align: center;
+}
+
+.testimonials-slider .owl-dots:not(.owl-dots-number) .owl-dot {
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	background: #ffffff;
+	margin-right: 5px;
+}
+
+.testimonials-slider .owl-dots:not(.owl-dots-number) .owl-dot.active {
+	background: #ffc515;
 }

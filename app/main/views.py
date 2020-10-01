@@ -55,7 +55,6 @@ def update_profile(uname):
 
 @main.route('/user/admin/dashboard/<uname>', methods=['GET','POST'])
 def admin_dashboard(uname):
-    uname = 'Abdi'
     title='Dashboard'
     total_orders = Orders.query.count()
     orders = Orders.query.all()
