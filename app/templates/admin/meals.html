@@ -1,0 +1,46 @@
+{% extends 'admin/admin-base.html' %}
+{% import 'bootstrap/wtf.html' as wtf %}
+<!-- Styles block -->
+
+{% block styles%} {{ super() }}
+<link rel="stylesheet" href="{{url_for('static',filename='css/admin/menu.css')}}" />
+{% endblock %}
+{% block content%}
+<div class="container">
+    <h1 class="text-center">All Meals</h1>
+    <!--Table-->
+<table class="table table-striped w-auto">
+
+    <!--Table head-->
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>MEALS</th>
+        <th>INGREDIENTS</th>
+        <th>PRICE</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <!--Table head-->
+  
+    <!--Table body-->
+    <tbody>
+      {% for meal in meals %}
+      <tr class="table-info">
+        <th scope="row">{{meal.id}}</th>
+        <td>{{meal.name}}</td>
+        <td>{{meal.ingredients}}</td>
+        <td>{{meal.cost}}</td>
+        <td><a href="{{url_for('.delete_meal',meal_id = meal.id)}}"><button type="button" class="btn btn-primary">Delete Meal</button></a></td>
+      </tr>
+      {% endfor %}
+      <tr>
+          <td><span></span></td>
+          <td><span></span></td>
+          <td><span></span></td>
+          <td><span></span></td>
+          <td><a href="{{url_for('.add_meal',uname = uname)}}"><button type="button" class="btn btn-info text-center">Add a Meal</button></a></td></tr>
+    </tbody>
+    </table>
+</div>
+{% endblock%}

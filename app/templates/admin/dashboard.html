@@ -22,36 +22,38 @@
             </div>
         </div>
         <div class="col-md-4">
-            <div class="jumbotron" style="background-color:#006d77;">
-                <div class="card text-center">
-                    <div class="card-body">
-                        <h2 style="color:white;">ORDERS</h2>
-                        <hr>
-                        <h3 style="color:blanchedalmond;">{{total_orders}}</h3>
+            <a href="{{url_for('main.admin_orders',uname=current_user.username)}}}">
+                <div class="jumbotron" style="background-color:#006d77;">
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <h2 style="color:white;">ORDERS</h2>
+                            <hr>
+                            <h3 style="color:blanchedalmond;">{{total_orders}}</h3>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </a>
         </div>
     </div>
     <div class="row">
         <div class="col-md-2"></div>
         <div class="col-md-4">
-            <a href="{{url_for('main.admin_menu',uname=current_user.username)}}">
+            <a href="{{url_for('main.admin_meals',uname=current_user.username)}}">
                 <div class="jumbotron" style="background-color: #343a40; ">
                     <div class="card text-center">
                         <div class="card-body">
-                            <h2>MENU</h2>
+                            <h2>MEALS</h2>
                         </div>
                     </div>
                 </div>
             </a>
         </div>
         <div class="col-md-4">
-            <a href="{{url_for('main.admin_orders',uname=current_user.username)}}}">
+            <a href="{{url_for('main.admin_menu',uname=current_user.username)}}}">
                 <div class="jumbotron" style="background-color: #90e0ef; color:#a11d33">
                     <div class="card text-center">
                         <div class="card-body">
-                            <h2>HISTORY</h2>
+                            <h2>MENU</h2>
                         </div>
                     </div>
                 </div>
