@@ -1,7 +1,255 @@
-{% extends 'base.html'%}
-{% import 'bootstrap/wtf.html' as wtf%}
-{% import 'macros.html' as macro%}
+{% extends 'base.html'%} {% import 'bootstrap/wtf.html' as wtf%} {% import 'macros.html' as macro%} {% block content %}
+<div class="branding">
 
-{% block content %}
+    <h1> <a href="index.html" style="color:wheat;">iMeal</a>
 
-{% endblock %}
+        <div class="log">
+            <ul>
+                <li><a href="index.html" style="color: red">Logout</a></li>
+            </ul>
+        </div>
+    </h1>
+
+
+</div>
+<!--end branding container-->
+</header>
+<!--end navigation-->
+<section id="dash">
+    <div class="container dark" style="border-radius: 6px;">
+        <h1 style="text-align: center"> Menu</h1>
+        <hr>
+
+        <div class="container" style="width: 90%; border-radius:4px">
+
+            <button style="font-size: 11pt" class="tablink" onclick="openPage('breakfast', this, '#e8491d')">Breakfast</button>
+            <button style="font-size: 11pt" class="tablink" onclick="openPage('lunch', this, '#e8491d')" id="defaultOpen">Lunch</button>
+            <button style="font-size: 11pt" class="tablink" onclick="openPage('dinner', this, '#e8491d')">Dinner</button>
+
+        </div>
+        <br>
+        <br>
+
+        <div id="breakfast" class="tabcontent">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="thumbnail">
+                            <span class="border">
+    <button class="accordion"><b>Changamka</b> <i>with</i> <b>White Tea</b> ...<span style="color: #814f0c; font-size: 8pt"> $2.00</span></button>
+                            <div class="panel">
+                                <br>
+                                <br>
+                                <img src="/static/photos/meal.png" class="meal" alt="Image">
+                                <div class="caption">
+                                    <p><b>2 fried eggs and bacon </b> <span style="color: #e8491d; font-size: 10pt"> served with </span> <b>tea with whole milk</b></p>
+                                    <p style="font-size: 10pt"><b>Total: </b><span style="color: #e8491d; font-size: 10pt">$ 2.00</span> </p>
+                                    <button class="button_2" id="deliver">Remove</button>
+                                </div>
+                            </div>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="thumbnail">
+                            <span class="border">
+    <button class="accordion"><b>Morning glory</b> <i>with</i> <b>White Coffee</b> ...<span style="color: #814f0c; font-size: 8pt"> $3.00</span></button>
+                            <div class="panel">
+                                <br>
+                                <br>
+                                <img src="/static/photos/meal.png" class="meal" alt="Image">
+                                <div class="caption">
+                                    <p><b>Scotched eggs,french toast and sausages </b> <span style="color: #e8491d; font-size: 10pt"> served with </span> <b>coffee with whole milk</b></p>
+                                    <p style="font-size: 10pt"><b>Total: </b><span style="color: #e8491d; font-size: 10pt">$ 3.00</span> </p>
+                                    <button class="button_2" id="deliver">Remove</button>
+                                </div>
+                            </div>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <div class="thumbnail">
+                            <span class="border">
+    <button class="accordion"><b>Early birds</b> <i>with</i> <b>White Choclate</b> ...<span style="color: #814f0c; font-size: 8pt"> $5.00</span></button>
+                            <div class="panel">
+                                <br>
+                                <br>
+                                <img src="/static/photos/meal.png" class="meal" alt="Image">
+                                <div class="caption">
+                                    <p><b>Two sausages,bacon and toast </b> <span style="color: #e8491d; font-size: 10pt"> served with </span> <b>hot choclate with whole milk</b></p>
+                                    <p style="font-size: 10pt"><b>Total: </b><span style="color: #e8491d; font-size: 10pt">$ 5.00</span> </p>
+                                    <button class="button_2" id="deliver">Remove</button>
+                                </div>
+                            </div>
+                            </span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div id="lunch" class="tabcontent">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="thumbnail">
+                            <span class="border">
+    <button class="accordion"><b>Mama oliech</b> <i>with</i> <b>ugali</b> ...<span style="color: #814f0c; font-size: 8pt"> $15.00</span></button>
+                            <div class="panel">
+                                <br>
+                                <br>
+                                <img src="/static/photos/meal.png" class="meal" alt="Image">
+                                <div class="caption">
+                                    <p><b>wet fried fish </b> <span style="color: #e8491d; font-size: 10pt"> served with </span> <b>ugali</b></p>
+                                    <p style="font-size: 10pt"><b>Total: </b><span style="color: #e8491d; font-size: 10pt">$ 15.00</span> </p>
+                                    <button class="button_2" id="deliver">Remove</button>
+                                </div>
+                            </div>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="thumbnail">
+                            <span class="border">
+    <button class="accordion"><b>Choma zone</b> <i>with</i> <b>Kachumbari</b> ...<span style="color: #814f0c; font-size: 8pt"> $12.00</span></button>
+                            <div class="panel">
+                                <br>
+                                <br>
+                                <img src="/static/photos/meal.png" class="meal" alt="Image">
+                                <div class="caption">
+                                    <p><b>grilled chops </b> <span style="color: #e8491d; font-size: 10pt"> served with </span> <b>a side plate </b></p>
+                                    <p style="font-size: 10pt"><b>Total: </b><span style="color: #e8491d; font-size: 10pt">$ 12.00</span> </p>
+                                    <button class="button_2" id="deliver">Remove</button>
+                                </div>
+                            </div>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <div class="thumbnail">
+                            <span class="border">
+    <button class="accordion"><b>Chicken Manenos</b> <i>with</i> <b>Rice</b> ...<span style="color: #814f0c; font-size: 8pt"> $22.00</span></button>
+                            <div class="panel">
+                                <br>
+                                <br>
+                                <img src="/static/photos/meal.png" class="meal" alt="Image">
+                                <div class="caption">
+                                    <p><b>Chicken Drumsticks </b> <span style="color: #e8491d; font-size: 10pt"> served with </span> <b>plain rice</b></p>
+                                    <p style="font-size: 10pt"><b>Total: </b><span style="color: #e8491d; font-size: 10pt">$ 22.00</span> </p>
+                                    <button class="button_2" id="deliver">Remove</button>
+                                </div>
+                            </div>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="dinner" class="tabcontent">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="thumbnail">
+                            <span class="border">
+<button class="accordion"><b>Kagwe Special</b> <i>with</i> <b>clients choice</b> ...<span style="color: #814f0c; font-size: 8pt"> $10.00</span></button>
+                            <div class="panel">
+                                <br>
+                                <br>
+                                <img src="/static/photos/meal.png" class="meal" alt="Image">
+                                <div class="caption">
+                                    <p><b>french fries </b> <span style="color: #e8491d; font-size: 10pt"> served with </span> <b>two sausages and barley</b></p>
+                                    <p style="font-size: 10pt"><b>Total: </b><span style="color: #e8491d; font-size: 10pt">$ 10.00</span> </p>
+                                    <button class="button_2" id="deliver">Remove</button>
+                                </div>
+                            </div>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="thumbnail">
+                            <span class="border">
+<button class="accordion"><b>Swine Dine</b> <i>with</i> <b>Ugali</b> ...<span style="color: #814f0c; font-size: 8pt"> $15.00</span></button>
+                            <div class="panel">
+                                <br>
+                                <br>
+                                <img src="/static/photos/meal.png" class="meal" alt="Image">
+                                <div class="caption">
+                                    <p><b>Wet fried pork with thick paste  </b> <span style="color: #e8491d; font-size: 10pt"> served with </span> <b>ugali</b></p>
+                                    <p style="font-size: 10pt"><b>Total: </b><span style="color: #e8491d; font-size: 10pt">$ 15.00</span> </p>
+                                    <button class="button_2" id="deliver">Remove</button>
+                                </div>
+                            </div>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <div class="thumbnail">
+                            <span class="border">
+<button class="accordion"><b>Wilderness</b> <i>with</i> <b>Serving</b> ...<span style="color: #814f0c; font-size: 8pt"> $13.00</span></button>
+                            <div class="panel">
+                                <br>
+                                <br>
+                                <img src="/static/photos/meal.png" class="meal" alt="Image">
+                                <div class="caption">
+                                    <p><b>Game meat </b> <span style="color: #e8491d; font-size: 10pt"> served with </span> <b>local desert</b></p>
+                                    <p style="font-size: 10pt"><b>Total: </b><span style="color: #e8491d; font-size: 10pt">$ 13.00</span> </p>
+                                    <button class="button_2" id="deliver">Remove</button>
+                                </div>
+                            </div>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p> IMeal Copyright &copy; 2020</p>
+        </footer>
+
+        <script>
+            function openPage(pageName, elmnt, color) {
+                // Hide all elements with class="tabcontent" by default */
+                var i, tabcontent, tablinks;
+                tabcontent = document.getElementsByClassName("tabcontent");
+                for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                }
+
+                // Remove the background color of all tablinks/buttons
+                tablinks = document.getElementsByClassName("tablink");
+                for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].style.backgroundColor = "";
+                }
+
+                // Show the specific tab content
+                document.getElementById(pageName).style.display = "block";
+
+                // Add the specific color to the button used to open the tab content
+                elmnt.style.backgroundColor = color;
+            }
+
+            var acc = document.getElementsByClassName("accordion");
+            var i;
+
+            for (i = 0; i < acc.length; i++) {
+                acc[i].addEventListener("click", function() {
+                    this.classList.toggle("active");
+                    var panel = this.nextElementSibling;
+                    if (panel.style.maxHeight) {
+                        panel.style.maxHeight = null;
+                    } else {
+                        panel.style.maxHeight = panel.scrollHeight + "px";
+                    }
+                });
+            }
+        </script>
+
+        {% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'admin/admin-base.html' %}
+
+<!-- Styles block -->
+
+{% block styles%} {{ super() }}
+<link rel="stylesheet" href="{{url_for('static',filename='css/admin/orders.css')}}" />
+{% endblock %}
+{% block content%}
+<div class="container">
+    <h1>ORDERS</h1>
+    <!--Table-->
+<table class="table table-striped w-auto">
+
+    <!--Table head-->
+    <thead>
+      <tr>
+        <th>ORDER ID</th>
+        <th>CUSTOMER</th>
+        <th>CUSTOMER CONTACT</th>
+        <th>MEALS</th>
+        <th>INGREDIENTS</th>
+        <th>ORDER CHARGE</th>
+      </tr>
+    </thead>
+    <!--Table head-->
+  
+    <!--Table body-->
+    <tbody>
+      {% for order in orders %}
+      <tr class="table-info">
+        <th scope="row">{{order.id}}</th>
+        <td>{{order.users.username}}</td>
+        <td>{{order.users.email}}</td>
+        <td>{{order.meals.name}}</td>
+        <td>{{order.meals.ingredients}}</td>
+        <td>{{order.meals.cost}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+    </table>
+</div>
+{% endblock%}

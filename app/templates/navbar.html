@@ -1,27 +1,32 @@
-<a class="navbar-brand" href="/">
-    <img
-      alt=""
-      src=""
-      width="30"
-      height="30"
-      class="d-inline-block align-top"
-    />
-  </a>
+
+{% import 'macros.html' as macro%}
+
+{% block content %}
 <div class="header-area ">
     <div id="sticky-header" class="main-header-area">
         <div class="container-fluid p-0">
             <div class="header_bottom_border">
-                <div class="row align-items-center no-gutters text-right">
-        
-        <div class="navbar navbar-inverse" role="navigation">
-        <a class="navbar-brand" href="/"><b> IMEALS </b></a>
-        </div>
-        <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
-          <ul class="nav navbar-nav font-weight-bold text-uppercase align-items-center">
-            <li><a href="/">Home</a></li>
-            <li><a href="/">Menu</a></li>
-            <li><a href="/">Contact</a></li>
-        </nav>
-           
+                <div class="row align-items-center no-gutters">
+                <div class="navbar navbar-inverse" role="navigation">
+
+                 <a class="navbar-brand" href="/"><b> IMEALS </b></a>
+                </div>
+
+            <ul class="nav navbar-nav">
+                <li><a href="/">Home</a></li>
+                <li><a href="/">Menu</a></li>
+                <li><a href="/">Contact</a></li>
+              <ul class="nav navbar-nav navbar-right">
+             {% if current_user.is_authenticated %}
+             <li style="color:white;padding:15px;">{{current_user.username}}</li>
+             <li><a href="{{url_for('auth.logout')}}">Sign out</a></li>
+             {% else %}
+             <li><a href="{{url_for('auth.login')}}">Sign in</a></li>
+             {%endif%}
+  </ul>
             </div>
-            </div></div>
+            </div>
+          </div>
+      </div>
+  </div>
+{% endblock %}
