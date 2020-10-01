@@ -17,7 +17,7 @@ def index():
 
 @main.route('/orders/<int:orders_id>')
 @login_required
-def orders(movie_id):
+def orders(orders_id):
 
     '''
     View orders page function that returns the order details page and its data
