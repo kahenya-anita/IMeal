@@ -2,14 +2,16 @@
 
 * {
     font-family: 'Architects Daughter', cursive;
-    font-size: 26px;
+
 }
 
 .navbar .navbar-nav {
     display: inline-block;
     float: none;
     vertical-align: top;
-    text-align: center;
+    text-align: right;
+    color: rgb(74, 185, 30);
+
 }
 
 
