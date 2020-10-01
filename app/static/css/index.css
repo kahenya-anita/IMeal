@@ -5,20 +5,19 @@
 
 }
 
-.navbar .navbar-nav {
-    display: inline-block;
-    float: none;
-    vertical-align: top;
-    text-align: right;
-    color: rgb(74, 185, 30);
 
+.section-title {
+    text-align: center;
+    margin-bottom: 75px;
 }
+
+
 
 
 body {
     margin: 0;
     padding: 0;
-    background-image: url('https://images.unsplash.com/photo-1516919549054-e08258825f80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80');
+    background-image: url('https://ludovicdumas.files.wordpress.com/2017/09/joseph-gonzalez-228027.jpg');
     width: 100vw;
     height: 100vh;
     background-size: cover;
