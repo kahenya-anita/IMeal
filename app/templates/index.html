@@ -1,5 +1,6 @@
-{% extends 'base.html' %}
-{% import 'macros.html' as macro%}
+{% extends 'base.html' %} {% import 'macros.html' as macro%}
+
+<link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}" />
 
 <!-- Styles block
 
@@ -18,17 +19,12 @@
     <div class="col-md-6">
       <img
         src="{{url_for('static', filename='photos/about_2.png')}}"
-        class="d-block w-100"
+        class="d-block w-100 "
         alt="..."
       />
     </div>
 
-    <h2>
-      IMEALS 
-.<span
-        >.</span
-      >
-    </h2>
+    <h2>IMEALS .<span>.</span></h2>
   </div>
 
   <section class="services-section">
@@ -56,7 +52,5 @@
       </div>
     </div>
   </section>
-
-  {% endblock content %}
 </div>
-{% endblock %}
+{% endblock content %}
