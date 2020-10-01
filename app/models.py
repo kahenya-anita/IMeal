@@ -51,8 +51,9 @@ class Meals(db.Model):
     ingredients = db.Column(db.String(255))
     cost = db.Column(db.Integer)
     deleted = db.Column(db.Boolean)
+    menu_id = db.Column(db.Integer, db.ForeignKey('menuday.id'), nullable=True)
 
-    menuday = db.relationship('Menuday',backref = 'meals',lazy="dynamic")
+    menuday = db.relationship('Menuday',foreign_keys=menu_id)
     orders = db.relationship('Orders',backref = 'meals',lazy="dynamic")
     #picture  = db.Column(db.String(255))
 
@@ -61,8 +62,7 @@ class Menuday(db.Model):
 
     id = db.Column(db.Integer,primary_key = True)
     mealdate = db.Column(db.String(255))
-    meal_id = db.Column(db.Integer,db.ForeignKey('meals.id'))
-
+    
     ##function to return the meals for a given date
 
 class Orders(db.Model):

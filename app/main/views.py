@@ -1,5 +1,5 @@
 from flask import render_template, request, redirect,url_for,abort
-from flask_login import LoginManager,login_user,login_required
+from flask_login import LoginManager,login_user,login_required,current_user
 from . import main
 from .forms import UpdateProfile,AddMealForm
 from .. import db
@@ -55,6 +55,9 @@ def update_profile(uname):
 
 @main.route('/user/admin/dashboard/<uname>', methods=['GET','POST'])
 def admin_dashboard(uname):
+    menu = Menuday(mealdate='Thursday')
+    db.session.add(menu)
+    db.session.commit()
     uname = 'Abdi'
     title='Dashboard'
     total_orders = Orders.query.count()
@@ -65,11 +68,6 @@ def admin_dashboard(uname):
         total_sales +=meal_cost
 
     return render_template('admin/dashboard.html',uname=uname,title=title,total_orders = total_orders,total_sales=total_sales)
-
-@main.route('/user/admin/menu/<uname>', methods=['GET','POST'])
-@login_required
-def admin_menu(uname):
-    return render_template('admin/menu.html')
 
 @main.route('/user/admin/orders/<uname>', methods=['GET','POST'])
 @login_required
@@ -109,3 +107,32 @@ def add_meal(uname):
         
         return redirect(url_for('.admin_meals',uname=uname))
     return render_template('admin/add-meal.html',form=form)
+
+@main.route('/user/admin/menu/<uname>', methods=['GET','POST'])
+@login_required
+def admin_menu(uname):
+    uname='Abdi'
+    title='Menu'
+    menu=Menuday.query.filter_by(mealdate='Thursday').first()
+    meals = Meals.query.filter_by(menu_id = menu.id).all()
+
+    return render_template('admin/menu.html',meals = meals,uname=uname,title=title)
+
+@main.route('/user/admin/menu/set/<uname>', methods=['GET','POST'])
+@login_required
+def set_menu(uname):
+    uname='Abdi'
+    meals = Meals.query.all()
+    title="Set"
+    return render_template('admin/set-menu.html',title=title,meals=meals,uname=uname)
+
+@main.route('/user/admin/menu/add/<meal_id>', methods=['GET','POST'])
+@login_required
+def add_menu(meal_id):
+    uname = 'Abdi'
+    menu = Menuday.query.filter_by(mealdate='Thursday').first()
+    meal = Meals.query.filter_by(id=meal_id).first()
+    meal.menu_id=menu.id
+    db.session.add(meal)
+    db.session.commit()
+    return redirect(url_for('.set_menu',uname=uname))
