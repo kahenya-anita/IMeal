@@ -16,36 +16,50 @@
   style="font-family: 'Times New Roman', Times, serif; font-weight: 1000"
 >
   <div class="row">
-    <div class="col-md-6">
-      <img
-        src="{{url_for('static', filename='photos/about_2.png')}}"
-        class="d-block w-100 "
-        alt="..."
-      />
+    <div class="col-md-12">
+      <div class="col-md-6">
+        <img
+          src="{{url_for('static', filename='photos/about_2.png')}}"
+          class="d-block w-100"
+          alt="..."
+        />
+      </div>
+      <div class="col-md-6">
+        <h2>
+          We offer a wide range of catering services, from drop-off to
+          full-service catering, launch parties to weddings. Browse our sample
+          menus for mouth-watering ideas for your next event..<span>.</span>
+        </h2>
+        <br />
+        <br />
+        <br />
+        <a href="/menu"><h1 style="text-align: center">Order Now</h1></a>
+      </div>
     </div>
-
-    <h2>IMEALS .<span>.</span></h2>
   </div>
 
+  <br />
+  <br />
+  <br />
   <section class="services-section">
     <div class="container">
-      <div class="section-title">
-        <h2 style="text-align: center">Our Services</h2>
-      </div>
+      <p style="font-size: 45px; text-align: center">Our Services</p>
+      <p style="font-size: 17px; text-align: center">
+        <i>
+          Our catering services are perfect for any size, any style, and are
+          customized to your budget
+        </i>
+      </p>
       <div class="row services">
-        <div class="col-lg-3 col-md-6 service-item">
+        <div class="col-md-4 service-item">
           <h3>Breakfast</h3>
           <p>Breakfast choices.</p>
         </div>
-        <div class="col-lg-3 col-md-6 service-item">
-          <h3>Brunch</h3>
-          <p>Here are Brunch options.</p>
-        </div>
-        <div class="col-lg-3 col-md-6 service-item">
+        <div class="col-md-4 service-item">
           <h3>Lunch</h3>
           <p>Here are Lunch options</p>
         </div>
-        <div class="col-lg-3 col-md-6 service-item">
+        <div class="col-md-4 service-item">
           <h3>Dinner</h3>
           <p>Here are Dinner options</p>
         </div>
@@ -53,4 +67,31 @@
     </div>
   </section>
 </div>
-{% endblock content %}
+<div class="container">
+  <div class="card">
+    <div class="col-md-12">
+      <div class="col-md-3">
+        WEDDING We created two wedding packages to make planning your wedding
+        easier than ever. We guide you through curating the perfect menu for you
+        and your guests.
+      </div>
+      <div class="col-md-3">
+        CORPORATE Our corporate lunch catering package is an easy drop-off or
+        pick-up service. Simply contact us and like magic, large trays of
+        restaurant-quality food will come to you.
+      </div>
+      <div class="col-md-3">
+        SOCIAL From birthday or anniversary parties to non-profit fundraisers
+        and more, our social catering menu will have you breaking bread with
+        your closest friends and community partners.
+      </div>
+      <div class="col-md-3">
+        HOLIDAY Our holiday catering menus are sure to impress. Let our team
+        handle the cooking while you sit back and entertain your friends and
+        family.
+      </div>
+    </div>
+  </div>
+
+  {% endblock content %}
+</div>
