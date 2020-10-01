@@ -1,35 +1,47 @@
-
-{% import 'macros.html' as macro%}
-
-{% block content %}
-<div class="header-area ">
-    <div id="sticky-header" class="main-header-area">
-        <div class="container-fluid p-0">
-            <div class="header_bottom_border">
-                <div class="row align-items-center no-gutters">
-                <div class="navbar navbar-inverse" role="navigation">
-
-                 <a class="navbar-brand" href="/"><b> IMEALS </b></a>
-                </div>
-                <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
-                   
-                  
-            <ul class="nav navbar-nav">
-                <li><a href="/">Home</a></li>
-                <li><a href="/">Menu</a></li>
-                <li><a href="/">Contact</a></li>
-            </nav>
-              <ul class="nav navbar-nav navbar-right">
-             {% if current_user.is_authenticated %}
-             <li style="color:white;padding:15px;">{{current_user.username}}</li>
-             <li><a href="{{url_for('auth.logout')}}">Sign out</a></li>
-             {% else %}
-             <li><a href="{{url_for('auth.login')}}">Sign in</a></li>
-             {%endif%}
-  </ul>
-            </div>
-            </div>
-          </div>
-      </div>
+{% import 'macros.html' as macro%} {% block content %}
+<!-- Navigations -->
+<nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
+  <div class="container">
+    <a
+      class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none"
+      href="#"
+      >Start Bootstrap</a
+    >
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarResponsive"
+      aria-controls="navbarResponsive"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item px-lg-4">
+          <a class="nav-link text-uppercase text-expanded" href="index.html"
+            >Home
+            <span class="sr-only">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item active px-lg-4">
+          <a class="nav-link text-uppercase text-expanded" href="about.html"
+            >About</a
+          >
+        </li>
+        <li class="nav-item px-lg-4">
+          <a class="nav-link text-uppercase text-expanded" href="">Menu</a>
+        </li>
+        <li class="nav-item px-lg-4">
+          <a class="nav-link text-uppercase text-expanded" href="store.html"
+            >Orders</a
+          >
+        </li>
+      </ul>
+    </div>
   </div>
+</nav>
+
 {% endblock %}

@@ -15,9 +15,13 @@ def index():
     '''
     return render_template('index.html')
 
+@main.route('/about')
+def about():
+    return render_template('about.html')
+
 @main.route('/orders/<int:orders_id>')
 @login_required
-def orders(movie_id):
+def orders(orders_id):
 
     '''
     View orders page function that returns the order details page and its data
@@ -55,7 +59,6 @@ def update_profile(uname):
 
 @main.route('/user/admin/dashboard/<uname>', methods=['GET','POST'])
 def admin_dashboard(uname):
-    uname = 'Abdi'
     title='Dashboard'
     total_orders = Orders.query.count()
     orders = Orders.query.all()
@@ -75,3 +78,4 @@ def admin_menu(uname):
 @login_required
 def admin_orders(uname):
     return render_template('admin/orders.html')
+

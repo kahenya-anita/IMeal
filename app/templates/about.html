@@ -1,17 +1,84 @@
-{% extends 'base.html' %}
- {% import 'macros.html' as macro%} 
- {% block content %}
+{% extends 'base.html' %} {% import 'macros.html' as macro%} {% block content %}
 
-    <div class="container">
-      <div class="row">
-        
-          <h1>About IMEALS</h1>
-          <p>
-              Here at IMEALS we aim to provide the best services when it comes to food catering and user services
-          </p>
-        
-         
-        </div>
-      </div>
+<div class="container">
+  <div class="row">
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="utf-8" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+
+        <title>About</title>
+
+        <!-- Custom styles for this template -->
+        <link
+          href="{{url_for('static',filename='vendor/bootstrap/css/bootstrap.min.css')}}"
+          rel="stylesheet"
+        />
+        <link
+          href="{{url_for('static',filename='css/business-casual.min.css')}}"
+          rel="stylesheet"
+        />
+      </head>
+
+      <body>
+        <h1 class="site-heading text-center text-white d-none d-lg-block">
+          <span class="site-heading-upper text-primary mb-3">IMEALS</span>
+          <span class="site-heading-lower">Business Casual</span>
+        </h1>
+
+        <section class="page-section about-heading">
+          <div class="container">
+            <img
+              class="img-fluid rounded about-heading-img mb-3 mb-lg-0"
+              src="{{url_for('static', filename='img/about.jpg')}}"
+              alt=""
+            />
+            <div class="about-heading-content">
+              <div class="row">
+                <div class="col-xl-9 col-lg-10 mx-auto">
+                  <div class="bg-faded rounded p-5">
+                    <h2 class="section-heading mb-4">
+                      <span class="section-heading-upper"
+                        >Best Caterer service</span
+                      >
+                      <span class="section-heading-lower">About IMEALS</span>
+                    </h2>
+                    <p>
+                      IMEALS,opened its first store in 1999 in Nairobi. With the
+                      aim of introducing up to Standard catering services in
+                      Kenya And in the recent times the brand has evolved. We
+                      now we have a much more convenient way of ordering food
+                      online
+                    </p>
+                    <p class="mb-0">
+                      Our catering services are perfect for any size, any style,
+                      and are customized to your budget.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <footer class="footer text-faded text-center py-5">
+          <div class="container">
+            <p class="m-0 small">Copyright &copy; moringacypher 2020</p>
+          </div>
+        </footer>
+
+        <!-- Bootstrap core JavaScript -->
+        <script src="{{url_for('static',filename='vendor/jquery/jquery.min.js')}}"></script>
+        <script src="{{url_for('static',filename='vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+      </body>
+    </html>
+
+    {% endblock content %}
+  </div>
 </div>
-{% endblock content %}

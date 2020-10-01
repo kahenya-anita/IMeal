@@ -2,61 +2,52 @@
 
 <!-- Navbar block -->
 
-{% block navbar %}
-{% include 'navbar.html' %}
-{% endblock %}
+{% block navbar %} {% include 'navbar.html' %} {% endblock %}
 
 <!DOCTYPE html>
 <html>
   <head>
-
-      {% block styles%}
-      {{ super() }}
-      <link rel="stylesheet" href="{{url_for('static',filename='css/styles.css')}}" />
-      {% endblock %}
-
-
-      {% block scripts%}
-      {{ super() }}
-      <script src="{{url_for('static',filename='js/scripts.js')}}"></script>
-
-      <!-- Bootstrap js -->
-      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-      <!--Fonts-->
-      <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Courgette&family=Grenze+Gotisch:wght@800&family=New+Rocker&display=swap" rel="stylesheet" />
-      {% endblock %}
-
-
-      {% block head %}
-      {{ super() }}
-      <!--Bootstrap js-->
-      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-      <!--Fonts-->
-      <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Courgette&family=Grenze+Gotisch:wght@800&family=New+Rocker&display=swap" rel="stylesheet" />
-      {% endblock %}
+    {% block styles%} {{ super() }}
+    <link
+      rel="stylesheet"
+      href="{{url_for('static',filename='css/styles.css')}}"
+    />
+    <link
+      href="{{url_for('static',filename='vendor/bootstrap/css/bootstrap.min.css')}}"
+      rel="stylesheet"
+    />
+    <link
+      href="{{url_for('static',filename='css/business-casual.min.css')}}"
+      rel="stylesheet"
+    />
+    {% endblock %} {% block head %} {{ super() }}
+    <!-- Bootstrap core JavaScript -->
+    <script src="static/vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Custom fonts for this template -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i"
+      rel="stylesheet"
+    />
+    <!--Fonts-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Courgette&family=Grenze+Gotisch:wght@800&family=New+Rocker&display=swap"
+      rel="stylesheet"
+    />
+    {% endblock %}
 
     <title>
-
-      {% block title%}
-      {{ super() }}
-      {% if title %}
-      {% else %}
-      Eat Bits
-      {% endif %}
-        {% endblock %}
+      {% block title%} {{ super() }} {% if title %} {% else %} Eat Bits {% endif
+      %} {% endblock %}
     </title>
   </head>
 
-
   <body>
-    {%block content%}
-
-    {% endblock%}
-
+    {%block content%} {% endblock%}
   </body>
-
-</html>  
+</html>

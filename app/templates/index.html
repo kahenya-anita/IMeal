@@ -2,96 +2,58 @@
 
 <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}" />
 
-<!-- Styles block
+<!-- Styles block-->
 
-{% block styles%} {{ super() }} {% endblock %}
-
--->
+{% block styles%} {{ super() }}
+<link href="{{url_for('static',filename='vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+<link href="{{url_for('static',filename='css/business-casual.min.css')}}" rel="stylesheet">
+{% endblock %}
 
 <!-- Content Block-->
 {% block content %}
-
-<div
-  class="container"
-  style="font-family: 'Times New Roman', Times, serif; font-weight: 1000"
->
-  <div class="row">
-    <div class="col-md-12">
-      <div class="col-md-6">
-        <img
-          src="{{url_for('static', filename='photos/about_2.png')}}"
-          class="d-block w-100"
-          alt="..."
-        />
-      </div>
-      <div class="col-md-6">
-        <h2>
-          We offer a wide range of catering services, from drop-off to
-          full-service catering, launch parties to weddings. Browse our sample
-          menus for mouth-watering ideas for your next event..<span>.</span>
+<h1 class="site-heading text-center text-white d-none d-lg-block">
+  <span class="site-heading-upper text-primary mb-3">Food Deliveries 4 You </span>
+  <span class="site-heading-lower">IMEALS ONLINE</span>
+</h1>
+<section class="page-section clearfix">
+  <div class="container">
+    <div class="intro">
+      <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{{url_for('static', filename='img/intro.jpg')}}" alt="">
+      <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+        <h2 class="section-heading mb-4">
+          <span class="section-heading-upper">Fresh Deliveries</span>
+          <span class="section-heading-lower">Worth Every Coin</span>
         </h2>
-        <br />
-        <br />
-        <br />
-        <a href="/menu"><h1 style="text-align: center">Order Now</h1></a>
+        <p class="mb-3">When it comes to food orders and deliveries we got your back- we guarantee it!
+        </p>
+        <div class="intro-button mx-auto">
+          <a class="btn btn-primary btn-xl" href="#">Order Today!</a>
+        </div>
       </div>
     </div>
   </div>
+</section>
 
-  <br />
-  <br />
-  <br />
-  <section class="services-section">
-    <div class="container">
-      <p style="font-size: 45px; text-align: center">Our Services</p>
-      <p style="font-size: 17px; text-align: center">
-        <i>
-          Our catering services are perfect for any size, any style, and are
-          customized to your budget
-        </i>
-      </p>
-      <div class="row services">
-        <div class="col-md-4 service-item">
-          <h3>Breakfast</h3>
-          <p>Breakfast choices.</p>
+<section class="page-section cta">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-9 mx-auto">
+        <div class="cta-inner text-center rounded">
+          <h2 class="section-heading mb-4">
+            <span class="section-heading-upper">Our Promise</span>
+            <span class="section-heading-lower">To You</span>
+          </h2>
+          <p class="mb-0">When you visit our site to start your order for the day, we are dedicated to providing you with friendly service, a welcoming atmosphere, and above all else, excellent products made with the highest quality ingredients. If you are not satisfied, please let us know and we will do whatever we can to make things right!</p>
         </div>
-        <div class="col-md-4 service-item">
-          <h3>Lunch</h3>
-          <p>Here are Lunch options</p>
-        </div>
-        <div class="col-md-4 service-item">
-          <h3>Dinner</h3>
-          <p>Here are Dinner options</p>
-        </div>
-      </div>
-    </div>
-  </section>
-</div>
-<div class="container">
-  <div class="card">
-    <div class="col-md-12">
-      <div class="col-md-3">
-        WEDDING We created two wedding packages to make planning your wedding
-        easier than ever. We guide you through curating the perfect menu for you
-        and your guests.
-      </div>
-      <div class="col-md-3">
-        CORPORATE Our corporate lunch catering package is an easy drop-off or
-        pick-up service. Simply contact us and like magic, large trays of
-        restaurant-quality food will come to you.
-      </div>
-      <div class="col-md-3">
-        SOCIAL From birthday or anniversary parties to non-profit fundraisers
-        and more, our social catering menu will have you breaking bread with
-        your closest friends and community partners.
-      </div>
-      <div class="col-md-3">
-        HOLIDAY Our holiday catering menus are sure to impress. Let our team
-        handle the cooking while you sit back and entertain your friends and
-        family.
       </div>
     </div>
   </div>
+</section>
 
-  {% endblock content %}
-</div>
+<footer class="footer text-faded text-center py-5">
+  <div class="container">
+    <p class="m-0 small">Copyright &copy; Moringa Cyphers 2020</p>
+  </div>
+</footer>
+
+{% endblock %}
