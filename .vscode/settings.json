@@ -1,0 +1,9 @@
+{
+    "liveServer.settings.port": 5501,
+    "python.linting.pylintEnabled": true,
+    "python.linting.enabled": true,
+    "python.linting.pylintArgs": [
+        "--load-plugins",
+        "pylint-flask"
+    ]
+}
