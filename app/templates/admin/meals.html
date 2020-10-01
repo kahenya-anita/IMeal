@@ -31,7 +31,7 @@
         <td>{{meal.name}}</td>
         <td>{{meal.ingredients}}</td>
         <td>{{meal.cost}}</td>
-        <td><a href="{{url_for('.delete_meal',meal_id = meal.id)}}"><button type="button" class="btn btn-primary">Delete Meal</button></a></td>
+        <td><a href="{{url_for('.delete_meal',meal_id=meal.id)}}"><button type="button" class="btn btn-primary">Delete Meal</button></a></td>
       </tr>
       {% endfor %}
       <tr>

@@ -1,7 +1,7 @@
 from flask import render_template, request, redirect,url_for,abort
 from flask_login import LoginManager,login_user,login_required
 from . import main
-from .forms import UpdateProfile
+from .forms import UpdateProfile,AddMealForm
 from .. import db
 from ..models import User,Meals,Menuday,Orders
 
@@ -74,4 +74,38 @@ def admin_menu(uname):
 @main.route('/user/admin/orders/<uname>', methods=['GET','POST'])
 @login_required
 def admin_orders(uname):
-    return render_template('admin/orders.html')
+    uname= 'Abdi'
+    orders = Orders.query.all()
+    return render_template('admin/orders.html',orders=orders)
+
+@main.route('/user/admin/meals/<uname>', methods=['GET','POST'])
+@login_required
+def admin_meals(uname):
+    uname ='Abdi'
+    title="Meals"
+    meals = Meals.query.all()
+    return render_template('admin/meals.html',title = title,meals=meals)
+
+@main.route('/user/admin/meals/delete/<meal_id>', methods=['GET','POST'])
+@login_required
+def delete_meal(meal_id):
+    uname ='Abdi'
+    Meals.query.filter_by(id=meal_id).delete()
+    db.session.commit()
+    return redirect(url_for('.admin_meals',uname=uname))
+
+@main.route('/user/admin/meals/add/<uname>', methods=['GET','POST'])
+@login_required
+def add_meal(uname):
+    uname = 'Abdi'
+    form = AddMealForm()
+    if form.validate_on_submit():
+        meal_name = form.name.data
+        meal_ingredients=form.ingredients.data
+        meal_cost = form.cost.data
+        new_meal = Meals(name=meal_name,ingredients=meal_ingredients,cost=meal_cost)
+        db.session.add(new_meal)
+        db.session.commit()
+        
+        return redirect(url_for('.admin_meals',uname=uname))
+    return render_template('admin/add-meal.html',form=form)
