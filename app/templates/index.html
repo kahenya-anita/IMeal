@@ -3,58 +3,60 @@
 
 <!-- Styles block
 
-{% block styles%} {{ super() }}
-<link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}" />
-{% endblock %}
+{% block styles%} {{ super() }} {% endblock %}
 
 -->
 
 <!-- Content Block-->
 {% block content %}
-<div class="bgimage">
-  <div class="p-3 p-md-5 m-md-3 text-center bg-transparent">
-    <div class="col-md-12 p-lg-5 mx-auto my-5">
-      <h2 class="display-4 font-weight-normal text-white">WELCOME TO IMEALS</h2>
-      <!-- Carousel trial
-          <div
-        id="carouselExampleSlidesOnly"
-        class="carousel slide"
-        data-ride="carousel"
-      >
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img
-              class="d-block w-100"
-              src="https://images.unsplash.com/photo-1486428128344-5413e434ad35?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
-              alt="First slide"
-            />
-          </div>
-          <div class="carousel-item">
-            <img
-              class="d-block w-100"
-              src="https://images.unsplash.com/photo-1521913626209-0fbf68f4c4b1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
-              alt="Second slide"
-            />
-          </div>
-          <div class="carousel-item">
-            <img
-              class="d-block w-100"
-              src="https://images.unsplash.com/photo-1518691340140-512e66ce957b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=746&q=80"
-              alt="Third slide"
-            />
-          </div>
-        </div>
-      </div> <!-->
-      <div id="buttons d-block mx-auto">
-        <a class="btn btn-outline-secondary text-white" href="/menu"
-          >View Menu</a
-        >&nbsp;&nbsp;
 
-        <a class="btn btn-outline-secondary text-white" href="/about"
-          >About us</a
-        >
+<div
+  class="container"
+  style="font-family: 'Times New Roman', Times, serif; font-weight: 1000"
+>
+  <div class="row">
+    <div class="col-md-6">
+      <img
+        src="{{url_for('static', filename='photos/about_2.png')}}"
+        class="d-block w-100"
+        alt="..."
+      />
+    </div>
+
+    <h2>
+      IMEALS 
+.<span
+        >.</span
+      >
+    </h2>
+  </div>
+
+  <section class="services-section">
+    <div class="container">
+      <div class="section-title">
+        <h2 style="text-align: center">Our Services</h2>
+      </div>
+      <div class="row services">
+        <div class="col-lg-3 col-md-6 service-item">
+          <h3>Breakfast</h3>
+          <p>Breakfast choices.</p>
+        </div>
+        <div class="col-lg-3 col-md-6 service-item">
+          <h3>Brunch</h3>
+          <p>Here are Brunch options.</p>
+        </div>
+        <div class="col-lg-3 col-md-6 service-item">
+          <h3>Lunch</h3>
+          <p>Here are Lunch options</p>
+        </div>
+        <div class="col-lg-3 col-md-6 service-item">
+          <h3>Dinner</h3>
+          <p>Here are Dinner options</p>
+        </div>
       </div>
     </div>
-  </div>
+  </section>
+
+  {% endblock content %}
 </div>
 {% endblock %}
