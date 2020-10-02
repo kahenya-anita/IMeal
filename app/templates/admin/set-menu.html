@@ -39,7 +39,7 @@
           <td><span></span></td>
           <td><span></span></td>
           <td><span></span></td>
-          <td><a href="{{url_for('.admin_menu',uname = uname)}}"><button type="button" class="btn btn-info text-center">DONE</button></a></td></tr>
+          <td><a href="{{url_for('.admin_menu',uname = current_user.username)}}"><button type="button" class="btn btn-info text-center">DONE</button></a></td></tr>
     </tbody>
     </table>
 </div>

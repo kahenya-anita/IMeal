@@ -31,16 +31,11 @@
         <td>{{meal.name}}</td>
         <td>{{meal.ingredients}}</td>
         <td>{{meal.cost}}</td>
-        <td><a href="{{url_for('.delete_meal',meal_id=meal.id)}}"><button type="button" class="btn btn-primary">Delete Meal</button></a></td>
+        <td><a href="{{url_for('.delete_meal',meal_id=meal.id)}}"><button type="button" class="btn btn-warning">Delete Meal</button></a></td>
       </tr>
       {% endfor %}
-      <tr>
-          <td><span></span></td>
-          <td><span></span></td>
-          <td><span></span></td>
-          <td><span></span></td>
-          <td><a href="{{url_for('.add_meal',uname = uname)}}"><button type="button" class="btn btn-info text-center">Add a Meal</button></a></td></tr>
     </tbody>
     </table>
+    <a href="{{url_for('.add_meal',uname=current_user.username)}}"><button type="button" class="btn btn-info btn-block">Add a Meal</button></a>
 </div>
 {% endblock%}

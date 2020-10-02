@@ -58,7 +58,7 @@ def admin_dashboard(uname):
     menu = Menuday(mealdate='Thursday')
     db.session.add(menu)
     db.session.commit()
-    uname = 'Abdi'
+    uname = current_user.username
     title='Dashboard'
     total_orders = Orders.query.count()
     orders = Orders.query.all()
@@ -72,14 +72,14 @@ def admin_dashboard(uname):
 @main.route('/user/admin/orders/<uname>', methods=['GET','POST'])
 @login_required
 def admin_orders(uname):
-    uname= 'Abdi'
+    uname= current_user.username
     orders = Orders.query.all()
     return render_template('admin/orders.html',orders=orders)
 
 @main.route('/user/admin/meals/<uname>', methods=['GET','POST'])
 @login_required
 def admin_meals(uname):
-    uname ='Abdi'
+    uname =current_user.username
     title="Meals"
     meals = Meals.query.all()
     return render_template('admin/meals.html',title = title,meals=meals)
@@ -87,15 +87,14 @@ def admin_meals(uname):
 @main.route('/user/admin/meals/delete/<meal_id>', methods=['GET','POST'])
 @login_required
 def delete_meal(meal_id):
-    uname ='Abdi'
+    uname = current_user.username
     Meals.query.filter_by(id=meal_id).delete()
     db.session.commit()
-    return redirect(url_for('.admin_meals',uname=uname))
+    return redirect(url_for('.admin_meals',uname=current_user.username))
 
 @main.route('/user/admin/meals/add/<uname>', methods=['GET','POST'])
 @login_required
 def add_meal(uname):
-    uname = 'Abdi'
     form = AddMealForm()
     if form.validate_on_submit():
         meal_name = form.name.data
@@ -105,34 +104,33 @@ def add_meal(uname):
         db.session.add(new_meal)
         db.session.commit()
         
-        return redirect(url_for('.admin_meals',uname=uname))
+        return redirect(url_for('.admin_meals',uname=current_user.username))
     return render_template('admin/add-meal.html',form=form)
 
 @main.route('/user/admin/menu/<uname>', methods=['GET','POST'])
 @login_required
 def admin_menu(uname):
-    uname='Abdi'
+    uname=current_user.username
     title='Menu'
     menu=Menuday.query.filter_by(mealdate='Thursday').first()
     meals = Meals.query.filter_by(menu_id = menu.id).all()
 
-    return render_template('admin/menu.html',meals = meals,uname=uname,title=title)
+    return render_template('admin/menu.html',meals = meals,title=title)
 
 @main.route('/user/admin/menu/set/<uname>', methods=['GET','POST'])
 @login_required
 def set_menu(uname):
-    uname='Abdi'
+    uname=current_user.username
     meals = Meals.query.all()
     title="Set"
-    return render_template('admin/set-menu.html',title=title,meals=meals,uname=uname)
+    return render_template('admin/set-menu.html',title=title,meals=meals)
 
 @main.route('/user/admin/menu/add/<meal_id>', methods=['GET','POST'])
 @login_required
 def add_menu(meal_id):
-    uname = 'Abdi'
     menu = Menuday.query.filter_by(mealdate='Thursday').first()
     meal = Meals.query.filter_by(id=meal_id).first()
     meal.menu_id=menu.id
     db.session.add(meal)
     db.session.commit()
-    return redirect(url_for('.set_menu',uname=uname))
+    return redirect(url_for('.set_menu',uname=current_user.username))

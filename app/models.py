@@ -16,7 +16,7 @@ class User(UserMixin,db.Model):
     role_id = db.Column(db.Integer,db.ForeignKey('roles.id'))
     pass_secure = db.Column(db.String(255))
 
-    orders = db.relationship('Orders', backref='user',lazy="dynamic")
+    orders = db.relationship('Orders', backref='users',lazy="dynamic")
 
     @property
     def password(self):
