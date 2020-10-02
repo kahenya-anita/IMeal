@@ -6,6 +6,7 @@
         <div class="list-group list-group-flush">
             <a href="{{url_for('main.admin_dashboard',uname=current_user.username)}}" class="list-group-item list-group-item-action bg-light">Dashboard</a>
             <a href="{{url_for('main.admin_menu',uname=current_user.username)}}" class="list-group-item list-group-item-action bg-light">Menu</a>
+            <a href="{{url_for('main.admin_meals',uname=current_user.username)}}" class="list-group-item list-group-item-action bg-light">Meals</a>
             <a href="{{url_for('main.admin_orders',uname=current_user.username)}}" class="list-group-item list-group-item-action bg-light">Orders</a>
         </div>
     </div>

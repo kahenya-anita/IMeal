@@ -6,5 +6,36 @@
 <link rel="stylesheet" href="{{url_for('static',filename='css/admin/menu.css')}}" />
 {% endblock styles%}
 {% block content%}
+<div class="container">
+    {% if meals%}
+    <h1 class="text-center">MENU OF THE DAY</h1>
+    <table class="table table-striped w-auto">
 
+    <!--Table head-->
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>MEALS</th>
+        <th>INGREDIENTS</th>
+        <th>PRICE</th>
+      </tr>
+    </thead>
+    <!--Table head-->
+  
+    <!--Table body-->
+    <tbody>
+      {% for meal in meals %}
+      <tr class="table-info">
+        <th scope="row">{{meal.id}}</th>
+        <td>{{meal.name}}</td>
+        <td>{{meal.ingredients}}</td>
+        <td>{{meal.cost}}</td>
+      </tr>
+      {% endfor %}
+      
+    </tbody>
+    </table>
+    {% endif%}
+    <p><a href="{{url_for('.set_menu',uname =current_user.username)}}"><button type="button" class='btn btn-info btn-block'>SET UP MENU</button></a></p>
+    
 {% endblock%}

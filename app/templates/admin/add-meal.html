@@ -2,13 +2,16 @@
 {% import 'bootstrap/wtf.html' as wtf %}
 {% block content%}
     <div class="container">
-        <div class="row">
-            <div class="col-md-4 col-sm-5">
-                <div class="card">
-                    <div class="card-header bg-warning text-center"><h2>Add Meal</h2></div>
-                    <div class="cardbody ">{{wtf.quick_form(form)}}</div>
-                </div>
-            </div>
-        </div>
+        <h2 class="text-center">Add Meal</h2>
+      <hr>
+      <form action="" method="post" class="form" role="form">
+        {{ form.csrf_token() }}
+       <d1>
+        {{ wtf.form_field(form.name, class='form-control') }}
+        {{ wtf.form_field(form.ingredients, class='form-control') }}
+        {{ wtf.form_field(form.cost, class='form-control') }}
+        </d1>
+        <p><input type='submit' class='btn btn-warning btn-block' placeholder="Add Meal">
+      </form>
     </div>
 {% endblock%}

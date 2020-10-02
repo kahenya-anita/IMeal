@@ -1,8 +1,10 @@
-{% extends 'base.html' %}
-
-  {% block sidebar%}
+{% extends 'bootstrap/base.html'%}
+<div class="d-flex" id="wrapper">
+  {% block navbar%}
   {% include 'admin/sidebar.html' %}
   {% endblock %}
+</div>
+  
 
   {% block content%}
   
