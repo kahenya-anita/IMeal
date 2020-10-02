@@ -82,3 +82,4 @@ def admin_menu(uname):
 @login_required
 def admin_orders(uname):
     return render_template('admin/orders.html')
+

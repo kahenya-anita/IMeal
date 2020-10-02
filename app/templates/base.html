@@ -2,13 +2,12 @@
 
 <!-- Navbar block -->
 
-{% block navbar %}
- {% include 'navbar.html' %}
-{% endblock %}
+{% block navbar %} {% include 'navbar.html' %} {% endblock %}
 
 <!DOCTYPE html>
 <html>
   <head>
+<<<<<<< HEAD
 
       {% block styles%}
       {{ super() }}
@@ -27,25 +26,30 @@
       <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
       {% endblock %}
+=======
+    {% block styles%} {{ super() }}
+    <link rel="stylesheet" href="{{css/bootstrap.css">
+    <!-- Bootstrap-Core-CSS -->
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+    <!-- Style-CSS -->
+    <!-- font-awesome-icons -->
+    <link href="css/font-awesome.css" rel="stylesheet">
+    <!-- //font-awesome-icons -->
+    <!-- /Fonts -->
+    <link href="//fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,600,700" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700" rel="stylesheet">
+    {% endblock %} {% block head %} {{ super() }}
+    
+    {% endblock %}
+>>>>>>> 0e2c201729fb816f9ba1e002455b4e421962f30f
 
     <title>
-
-      {% block title%}
-      {{ super() }}
-      {% if title %}
-      {% else %}
-      Eat Bits
-      {% endif %}
-        {% endblock %}
+      {% block title%} {{ super() }} {% if title %} {% else %} Eat Bits {% endif
+      %} {% endblock %}
     </title>
   </head>
 
-
   <body>
-    {%block content%}
-
-    {% endblock%}
-
+    {%block content%} {% endblock%}
   </body>
-
-</html>  
+</html>
