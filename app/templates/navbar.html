@@ -1,47 +1,29 @@
 {% import 'macros.html' as macro%} {% block content %}
 <!-- Navigations -->
-<nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
-  <div class="container">
-    <a
-      class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none"
-      href="#"
-      >Start Bootstrap</a
-    >
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-toggle="collapse"
-      data-target="#navbarResponsive"
-      aria-controls="navbarResponsive"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarResponsive">
-      <ul class="navbar-nav mx-auto">
-        <li class="nav-item px-lg-4">
-          <a class="nav-link text-uppercase text-expanded" href="index.html"
-            >Home
-            <span class="sr-only">(current)</span>
-          </a>
-        </li>
-        <li class="nav-item active px-lg-4">
-          <a class="nav-link text-uppercase text-expanded" href="about.html"
-            >About</a
-          >
-        </li>
-        <li class="nav-item px-lg-4">
-          <a class="nav-link text-uppercase text-expanded" href="">Menu</a>
-        </li>
-        <li class="nav-item px-lg-4">
-          <a class="nav-link text-uppercase text-expanded" href="store.html"
-            >Orders</a
-          >
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+nav class="py-4 d-lg-flex">
+                        <div id="logo">
+                            <h1> <a href="index.html"><span class="fa fa-align-center" aria-hidden="true"></span>HB</a></h1>
+                        </div>
+                        <label for="drop" class="toggle">Menu</label>
+                        <input type="checkbox" id="drop" />
+                        <ul class="menu mt-2 ml-auto">
+                            <li class="active"><a href="index.html">Home</a></li>
+                            <li><a href="#about" class="scroll">About</a></li>
+                            <li><a href="#menu" class="scroll">Menu</a></li>
+                            <li>
+                                <!-- First Tier Drop Down -->
+                                <label for="drop-2" class="toggle">Dropdown <span class="fa fa-angle-down" aria-hidden="true"></span> </label>
+                                <a href="#">Dropdown <span class="fa fa-angle-down" aria-hidden="true"></span></a>
+                                <input type="checkbox" id="drop-2" />
+                                <ul class="inner-ul">
+                                    <li><a class="scroll" href="#gallery">Gallery</a></li>
+                                    <li><a href="#services" class="scroll">Services</a></li>
+                                    <li><a href="#menu" class="scroll">Menu</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#testimonials" class="scroll">Reviews</a></li>
+                            <li><a href="#contact" class="scroll">Contact</a></li>
+                        </ul>
+                    </nav>
 
 {% endblock %}
