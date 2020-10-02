@@ -15,9 +15,13 @@ def index():
     '''
     return render_template('index.html')
 
+@main.route('/about')
+def about():
+    return render_template('about.html')
+
 @main.route('/orders/<int:orders_id>')
 @login_required
-def orders(movie_id):
+def orders(orders_id):
 
     '''
     View orders page function that returns the order details page and its data
@@ -134,3 +138,4 @@ def add_menu(meal_id):
     db.session.add(meal)
     db.session.commit()
     return redirect(url_for('.set_menu',uname=current_user.username))
+
