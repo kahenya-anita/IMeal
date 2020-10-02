@@ -28,17 +28,6 @@
       <li><a href="/viewmenu" class="scroll">Menu of the day</a></li>
       {% if current_user.is_authenticated %}
       {% if current_user.usertype == "Customer" %}
-      <li><a href="/viewmenu" class="scroll">Menu</a></li>
-      <li>
-          <!-- First Tier Drop Down -->
-          <label for="drop-2" class="toggle">Dropdown <span class="fa fa-angle-down" aria-hidden="true"></span> </label>
-          <a href="#">Dropdown <span class="fa fa-angle-down" aria-hidden="true"></span></a>
-          <input type="checkbox" id="drop-2" />
-          <ul class="inner-ul">
-              <li><a class="scroll" href="#gallery">Gallery</a></li>
-              <li><a href="#services" class="scroll">Services</a></li>
-          </ul>
-      </li>
       <li><a href="{{url_for('auth.logout')}}" class="scroll">Logout</a></li>
       {% endif %}
       {% if current_user.usertype == "Admin" %}
@@ -57,9 +46,9 @@
         </ul>
       </li>
       <li><a href="#contact" class="scroll">Contact</a></li>
-      </nav>
+
       {% endif%}
   </ul>
 
-
+    </nav>
 {% endblock %}

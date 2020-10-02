@@ -14,15 +14,18 @@
              <!--Displaying pitch info-->
              {% if current_user.id == o.user_id %}
                 {%for m in meals%}
-                   <h4> Name: {{m.name}}</h4>
-                   <br>
-                   <p style="font-weight: bold;"> Ingredients </p>
-                   <p> {{m.ingredients}}</p>
-                   <p style="font-weight: bold;"> Cost </p>
-                   <p> {{m.cost}} ksh</p>
-<hr><hr>
-                {%endfor%}
-             {%else%}
+                      {%if o.meal_id == m.id%}
+                         <h4> Name: {{m.name}}</h4>
+                         <br>
+                         <p style="font-weight: bold;"> Ingredients </p>
+                         <p> {{m.ingredients}}</p>
+                         <p style="font-weight: bold;"> Cost </p>
+                         <p> {{m.cost}} ksh</p>
+      <hr><hr>
+                      {% else %}
+                      {% endif %}
+                 {% endfor %}
+               {%else%}
              {% endif %}
 
         {% endfor %}
