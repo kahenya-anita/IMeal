@@ -826,7 +826,7 @@ ul.tic-info li span {
 /*-- /testimonials --*/
 
 #testimonials {
-    background: url_for('/app/static/images/banner3.jpg') center no-repeat;
+    background: url('static/images/banner3.jpg') center no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
