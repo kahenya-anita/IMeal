@@ -116,6 +116,7 @@ def add_meal(uname):
     return render_template('admin/add-meal.html',form=form)
 
 @main.route('/viewmenu', methods=['GET','POST'])
+@login_required
 def view_menu():
     #form = AddMealForm()
     meals = Meals.query.all()
@@ -123,6 +124,7 @@ def view_menu():
 
 #background process happening without any refreshing
 @main.route('/customerorder/order/<int:mid>')
+@login_required
 def customerorder(mid):
 
     uid=current_user.id
