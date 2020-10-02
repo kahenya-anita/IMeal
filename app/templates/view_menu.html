@@ -1,0 +1,35 @@
+{% extends 'base.html'%}
+ {% import 'macros.html' as macro%}
+ {% block content %}
+     <div class="container">
+
+         <div class="col-md-8">
+           <hr><hr>
+
+             <h2> Menu of the Day </h2>
+
+             <hr>
+
+             <!--Displaying pitch info-->
+             {% if meals %}
+                {%for m in meals%}
+                   <h4> Name: {{m.name}}</h4>
+                   <br>
+                   <p style="font-weight: bold;"> Ingredients </p>
+                   <p> {{m.ingredients}}</p>
+                   <p style="font-weight: bold;"> Cost </p>
+                   <p> {{m.cost}} ksh</p>
+                   <button type="button" onClick="window.location.href='{{url_for('main.customerorder',mid=m.id)}}'" class="btn btn-primary">Order</button>
+<hr><hr>
+                {%endfor%}
+             {%else%}
+               <p> There are no meals at the moment</p>
+             {% endif %}
+     <br>
+       <hr><hr>
+         </div>
+
+
+     </div>
+
+ {% endblock %}

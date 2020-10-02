@@ -115,12 +115,38 @@ def add_meal(uname):
         return redirect(url_for('.admin_meals',uname=current_user.username))
     return render_template('admin/add-meal.html',form=form)
 
+@main.route('/viewmenu', methods=['GET','POST'])
+def view_menu():
+    #form = AddMealForm()
+    meals = Meals.query.all()
+    return render_template('/view_menu.html',meals=meals)
+
+#background process happening without any refreshing
+@main.route('/customerorder/order/<int:mid>')
+def customerorder(mid):
+
+    uid=current_user.id
+    meal=Meals.query.filter_by(id=mid).first()
+
+    new_Order= Orders(user_id=uid, meal_id=meal.id)
+    db.session.add(new_Order)
+    db.session.commit()
+
+    return redirect(url_for('main.your_order'))
+
+@main.route('/yourorder', methods=['GET','POST'])
+def your_order():
+    #form = AddMealForm()
+    meals = Meals.query.all()
+    orders = Orders.query.all()
+    return render_template('/your_order.html',meals=meals, orders=orders)
+
 @main.route('/user/admin/menu/<uname>', methods=['GET','POST'])
 @login_required
 def admin_menu(uname):
     uname=current_user.username
     title='Menu'
-    menu=Menuday.query.filter_by(mealdate='Thursday').first()
+    menu= Menuday.query.filter_by(mealdate='Thursday').first()
     meals = Meals.query.filter_by(menu_id = menu.id).all()
 
     return render_template('admin/menu.html',meals = meals,title=title)

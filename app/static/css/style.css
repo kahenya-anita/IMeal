@@ -825,7 +825,7 @@ ul.tic-info li span {
 
 /*-- /testimonials --*/
 
-#testimonials {
+.testimonials {
     background: url('../images/banner3.jpg') center no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -1237,7 +1237,7 @@ a.move-top span {
 
 /*-- Responsive design --*/
 
-@media screen and (max-width: 1440px) {
+@media screen and (max-width: 1920px) {
 
     .main-content,
     .layer {
