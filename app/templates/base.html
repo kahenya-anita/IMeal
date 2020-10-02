@@ -2,29 +2,34 @@
 
 <!-- Navbar block -->
 
-{% block navbar %} {% include 'navbar.html' %} {% endblock %}
+{% block navbar %} 
+{% include 'navbar.html' %}
+ {% endblock %}
 
 <!DOCTYPE html>
 <html>
   <head>
     {% block styles%} {{ super() }}
-    <link rel="stylesheet" href="{{css/bootstrap.css">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap.css')}}">
     <!-- Bootstrap-Core-CSS -->
-    <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}" type="text/css" media="all" />
     <!-- Style-CSS -->
     <!-- font-awesome-icons -->
-    <link href="css/font-awesome.css" rel="stylesheet">
+    <link href="{{url_for('static',filename='css/font-awesome.css')}}" rel="stylesheet">
     <!-- //font-awesome-icons -->
     <!-- /Fonts -->
     <link href="//fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,600,700" rel="stylesheet">
     <link href="//fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700" rel="stylesheet">
-    {% endblock %} {% block head %} {{ super() }}
+    {% endblock %} 
     
-    {% endblock %}
-
     <title>
-      {% block title%} {{ super() }} {% if title %} {% else %} Eat Bits {% endif
-      %} {% endblock %}
+      {% block title%} 
+      {{ super() }} 
+      {% if title %} 
+      {% else %}
+       Eat Bits 
+       {% endif %}
+       {% endblock %}
     </title>
   </head>
 

@@ -7,7 +7,6 @@ from ..models import User,Meals,Menuday,Orders
 
 
 @main.route('/')
-
 def index():
 
     '''
@@ -15,8 +14,13 @@ def index():
     '''
     return render_template('index.html')
 
+
 @main.route('/about')
 def about():
+
+    '''
+    View root page function that returns the about page and its data
+    '''
     return render_template('about.html')
 
 @main.route('/orders/<int:orders_id>')

@@ -136,7 +136,6 @@ nav ul {
 nav ul li {
     margin: 0px 0.3em;
     display: inline-block;
-    float: left;
 }
 
 /* Styling the links */
@@ -406,7 +405,7 @@ li > a:only-child:after {
 /*-- //header --*/
 
 .main-content {
-    background: url(../images/banner1.jpg) center no-repeat;
+    background: url(/app/static/images/banner1.jpg) center no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -827,7 +826,7 @@ ul.tic-info li span {
 /*-- /testimonials --*/
 
 #testimonials {
-    background: url(../images/banner3.jpg) center no-repeat;
+    background: url('static/images/banner3.jpg') center no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -1095,7 +1094,7 @@ form#contactform1 {
 /* footer */
 
 .footer-content {
-    background: url(../images/banner2.jpg) center no-repeat;
+    background: url(/app/static/images/banner2.jpg) center no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
