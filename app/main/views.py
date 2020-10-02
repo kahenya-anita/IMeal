@@ -69,12 +69,12 @@ def admin_dashboard(uname):
     uname = current_user.username
     title='Dashboard'
     total_orders = Orders.query.count()
+    order=Orders(meal_id=10)
+    db.session.add(order)
+    db.session.commit()
     orders = Orders.query.all()
     total_sales = 0
-    for order in orders:
-        meal_cost = order.meals.cost
-        total_sales +=meal_cost
-
+  
     return render_template('admin/dashboard.html',uname=uname,title=title,total_orders = total_orders,total_sales=total_sales)
 
 @main.route('/user/admin/orders/<uname>', methods=['GET','POST'])
