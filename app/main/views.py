@@ -69,9 +69,6 @@ def admin_dashboard(uname):
     uname = current_user.username
     title='Dashboard'
     total_orders = Orders.query.count()
-    order=Orders(meal_id=10)
-    db.session.add(order)
-    db.session.commit()
     orders = Orders.query.all()
     total_sales = 0
   

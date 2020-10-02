@@ -1,13 +1,28 @@
 
-
-<div class="d-flex" id="wrapper">
-    <div class="bg-light border-right" id="sidebar-wrapper">
-        <div class="sidebar-heading">Admin </div>
-        <div class="list-group list-group-flush">
-            <a href="{{url_for('main.admin_dashboard',uname=current_user.username)}}" class="list-group-item list-group-item-action bg-light">Dashboard</a>
-            <a href="{{url_for('main.admin_menu',uname=current_user.username)}}" class="list-group-item list-group-item-action bg-light">Menu</a>
-            <a href="{{url_for('main.admin_meals',uname=current_user.username)}}" class="list-group-item list-group-item-action bg-light">Meals</a>
-            <a href="{{url_for('main.admin_orders',uname=current_user.username)}}" class="list-group-item list-group-item-action bg-light">Orders</a>
-        </div>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+    <a class="navbar-brand" href="/">iMeals Admin </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown" style="float: right;">
+      <ul class="nav navbar-nav ml-auto mr-3 ">
+        <li class="nav-item">
+          <a class="nav-link" href="{{url_for('main.admin_dashboard',uname=current_user.username)}}">Dashboard</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{url_for('main.admin_menu',uname=current_user.username)}}"> Menu</a>
+          </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{url_for('main.admin_meals',uname=current_user.username)}}"> Meals</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{url_for('main.admin_orders',uname=current_user.username)}}">Orders</a>
+          </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{url_for('auth.logout')}}">LOG OUT</a>
+        </li>
+      </ul>
     </div>
-</div>
+  </nav>
+  
+

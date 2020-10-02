@@ -6,7 +6,7 @@ class Config:
     General configuration parent class
     '''
     SECRET_KEY = ('1201ccc5804c3210fecc')
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://thanos:qwerty@localhost/imeal'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://ABDIHAKIM:123456789@localhost/imeals'
     #heroku database below
     #SQLALCHEMY_DATABASE_URI ='postgres+psycopg2://lfgiafilewplkg:652bbbf039b88462ef1ce2fc405a8a4a434e53c197f30b192ca0ff51e636234b@ec2-3-210-255-177.compute-1.amazonaws.com:5432/d8jd2q7ohb0q7k'
 

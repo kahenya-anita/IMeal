@@ -7,10 +7,9 @@
 {% endblock styles%}
 {% block content%}
 <div class = 'container'>
-    <h1>Dashboard</h1>
+    <h1 class="text-center">Dashboard</h1>
     <div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-4">
+        <div class="col-md-6">
             <div class="jumbotron" style="background-color: #03045e; color:whitesmoke;">
                 <div class="card text-center">
                     <div class="card-body">
@@ -21,7 +20,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-6">
             <a href="{{url_for('main.admin_orders',uname=current_user.username)}}}">
                 <div class="jumbotron" style="background-color:#006d77;">
                     <div class="card text-center">
@@ -36,8 +35,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-4">
+        <div class="col-md-6">
             <a href="{{url_for('main.admin_meals',uname=current_user.username)}}">
                 <div class="jumbotron" style="background-color: #343a40; ">
                     <div class="card text-center">
@@ -48,7 +46,7 @@
                 </div>
             </a>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-6">
             <a href="{{url_for('main.admin_menu',uname=current_user.username)}}}">
                 <div class="jumbotron" style="background-color: #90e0ef; color:#a11d33">
                     <div class="card text-center">
