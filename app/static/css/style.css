@@ -406,7 +406,7 @@ li > a:only-child:after {
 /*-- //header --*/
 
 .main-content {
-    background: url(../images/banner1.jpg) center no-repeat;
+    background: url(/app/static/images/banner1.jpg) center no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -827,7 +827,7 @@ ul.tic-info li span {
 /*-- /testimonials --*/
 
 #testimonials {
-    background: url(../images/banner3.jpg) center no-repeat;
+    background: url_for('/app/static/images/banner3.jpg') center no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -1095,7 +1095,7 @@ form#contactform1 {
 /* footer */
 
 .footer-content {
-    background: url(../images/banner2.jpg) center no-repeat;
+    background: url(/app/static/images/banner2.jpg) center no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;

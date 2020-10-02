@@ -1,12 +1,6 @@
-{% extends 'base.html' %} {% import 'macros.html' as macro%}
+{% extends 'base.html'%}
+ {% import 'macros.html' as macro%}
 
-<link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}" />
-
-<!-- Styles block-->
-
-{% block styles%} {{ super() }}
-
-{% endblock %}
 
 <!-- Content Block-->
 {% block content %}
@@ -15,7 +9,7 @@
   <div class="banner-info-w3layouts text-center">
       <h3>Burger Special</h3>
       <div class="read-more">
-          <a href="#about" class="read-more scroll">Read More </a> </div>
+      <a href="#about" class="read-more scroll">Read More </a> </div>
   </div>
   <div class="row order-info">
       <div class="middle mt-3 col-md-6 text-left">
@@ -37,7 +31,7 @@
 </div>
 </div>
 
-section class="banner-bottom-wthree py-5" id="about">
+<section class="banner-bottom-wthree py-5" id="about">
         <div class="container py-md-3">
             <div class="row banner-grids">
                 <div class="col-md-6 content-left-bottom text-left pr-lg-5">
@@ -46,11 +40,11 @@ section class="banner-bottom-wthree py-5" id="about">
 
                 </div>
                 <div class="col-md-6 content-right-bottom text-left">
-                    <img src="images/ab1.png" alt="news image" class="img-fluid">
+                    <img src="{{url_for('static',filename='images/ab1.png')}}" alt="news image" class="img-fluid">
                 </div>
             </div>
         </div>
-    </section>
+</section>
     <!-- //banner-bottom-wthree -->
     <!--/ about -->
     <section class="services py-5" id="services">
@@ -61,7 +55,7 @@ section class="banner-bottom-wthree py-5" id="about">
             <div class="row ab-info mt-lg-4">
                 <div class="col-lg-3 ab-content">
                     <div class="ab-content-inner">
-                        <img src="images/1.jpg" alt="news image" class="img-fluid">
+                        <img src="{{url_for('static',filename='images/1.jpg')}}" alt="news image" class="img-fluid">
                         <div class="ab-info-con">
                             <h4>Delicious sandwich</h4>
                             <p>$5.99</p>
@@ -70,7 +64,7 @@ section class="banner-bottom-wthree py-5" id="about">
                 </div>
                 <div class="col-lg-3 ab-content">
                     <div class="ab-content-inner">
-                        <img src="images/2.jpg" alt="news image" class="img-fluid">
+                        <img src="{{url_for('static',filename='images/2.jpg')}}" alt="news image" class="img-fluid">
                         <div class="ab-info-con">
                             <h4>Humburger & Chips</h4>
                             <p>$10.99</p>
@@ -79,7 +73,7 @@ section class="banner-bottom-wthree py-5" id="about">
                 </div>
                 <div class="col-lg-3 ab-content">
                     <div class="ab-content-inner">
-                        <img src="images/3.jpg" alt="news image" class="img-fluid">
+                        <img src="{{url_for('static',filename='images/3.jpg')}}" alt="news image" class="img-fluid">
                         <div class="ab-info-con">
                             <h4>Two burgers for one</h4>
                             <p>$25.99</p>
@@ -88,7 +82,7 @@ section class="banner-bottom-wthree py-5" id="about">
                 </div>
                 <div class="col-lg-3 ab-content">
                     <div class="ab-content-inner">
-                        <img src="images/4.jpg" alt="news image" class="img-fluid">
+                        <img src="{{url_for('static',filename='images/4.jpg')}}" alt="news image" class="img-fluid">
                         <div class="ab-info-con">
                             <h4>Veg Muffin</h4>
                             <p>$28.99</p>
@@ -121,7 +115,7 @@ section class="banner-bottom-wthree py-5" id="about">
                         <div class="ab-info row">
                             <div class="col-md-3 ab-content">
                                 <div class="tab-wrap">
-                                    <img src="images/5.jpg" alt="news image" class="img-fluid">
+                                    <img src="{{url_for('static',filename='images/5.jpg')}}" alt="news image" class="img-fluid">
                                     <div class="ab-info-con">
                                         <h4>Bacon Burger</h4>
                                         <p class="price">$5.99</p>
@@ -130,7 +124,7 @@ section class="banner-bottom-wthree py-5" id="about">
                             </div>
                             <div class="col-md-3 ab-content">
                                 <div class="tab-wrap">
-                                    <img src="images/6.jpg" alt="news image" class="img-fluid">
+                                    <img src="{{url_for('static',filename='images/6.jpg')}}" alt="news image" class="img-fluid">
                                     <div class="ab-info-con">
                                         <h4>Cheese Butter</h4>
                                         <p class="price">$15.99</p>
@@ -139,7 +133,7 @@ section class="banner-bottom-wthree py-5" id="about">
                             </div>
                             <div class="col-md-3 ab-content">
                                 <div class="tab-wrap">
-                                    <img src="images/7.jpg" alt="news image" class="img-fluid">
+                                    <img src="{{url_for('static',filename='images/7.jpg')}}" alt="news image" class="img-fluid">
                                     <div class="ab-info-con">
                                         <h4>Delicious sandwich</h4>
                                         <p class="price">$25.99</p>
@@ -148,7 +142,7 @@ section class="banner-bottom-wthree py-5" id="about">
                             </div>
                             <div class="col-md-3 ab-content">
                                 <div class="tab-wrap">
-                                    <img src="images/6.jpg" alt="news image" class="img-fluid">
+                                    <img src="{{url_for('static',filename='images/6.jpg')}}" alt="news image" class="img-fluid">
                                     <div class="ab-info-con">
                                         <h4>Delicious sandwich</h4>
                                         <p class="price">$35.99</p>
@@ -165,7 +159,7 @@ section class="banner-bottom-wthree py-5" id="about">
                         <div class="ab-info row">
                             <div class="col-md-3 ab-content">
                                 <div class="tab-wrap">
-                                    <img src="images/8.jpg" alt="news image" class="img-fluid">
+                                    <img src="{{url_for('static',filename='images/8.jpg')}}" alt="news image" class="img-fluid">
                                     <div class="ab-info-con">
                                         <h4>Pene Salmone</h4>
                                         <p class="price">$5.99</p>
@@ -174,7 +168,7 @@ section class="banner-bottom-wthree py-5" id="about">
                             </div>
                             <div class="col-md-3 ab-content">
                                 <div class="tab-wrap">
-                                    <img src="images/9.jpg" alt="news image" class="img-fluid">
+                                    <img src="{{url_for('static',filename='images/9.jpg')}}" alt="news image" class="img-fluid">
                                     <div class="ab-info-con">
                                         <h4>Cheese Butter</h4>
                                         <p class="price">$15.99</p>
@@ -183,7 +177,7 @@ section class="banner-bottom-wthree py-5" id="about">
                             </div>
                             <div class="col-md-3 ab-content">
                                 <div class="tab-wrap">
-                                    <img src="images/7.jpg" alt="news image" class="img-fluid">
+                                    <img src="{{url_for('static',filename='images/7.jpg')}}" alt="news image" class="img-fluid">
                                     <div class="ab-info-con">
                                         <h4>Bolognese Pasta</h4>
                                         <p class="price">$25.99</p>
@@ -192,7 +186,7 @@ section class="banner-bottom-wthree py-5" id="about">
                             </div>
                             <div class="col-md-3 ab-content">
                                 <div class="tab-wrap">
-                                    <img src="images/10.jpg" alt="news image" class="img-fluid">
+                                    <img src="{{url_for('static',filename='images/10.jpg')}}" alt="news image" class="img-fluid">
                                     <div class="ab-info-con">
                                         <h4>Tagliatelle Molto</h4>
                                         <p class="price">$35.99</p>
@@ -207,7 +201,7 @@ section class="banner-bottom-wthree py-5" id="about">
                         <div class="ab-info row">
                             <div class="col-md-3 ab-content">
                                 <div class="tab-wrap">
-                                    <img src="images/11.jpg" alt="news image" class="img-fluid">
+                                    <img src="{{url_for('static',filename='images/11.jpg')}}" alt="news image" class="img-fluid">
                                     <div class="ab-info-con">
                                         <h4>Cola Bottle</h4>
                                         <p class="price">$5.99</p>
@@ -216,7 +210,7 @@ section class="banner-bottom-wthree py-5" id="about">
                             </div>
                             <div class="col-md-3 ab-content">
                                 <div class="tab-wrap">
-                                    <img src="images/12.jpg" alt="news image" class="img-fluid">
+                                    <img src="{{url_for('static',filename='images/12.jpg')}}" alt="news image" class="img-fluid">
                                     <div class="ab-info-con">
                                         <h4>Fresh Lime</h4>
                                         <p class="price">$15.99</p>
@@ -225,7 +219,7 @@ section class="banner-bottom-wthree py-5" id="about">
                             </div>
                             <div class="col-md-3 ab-content">
                                 <div class="tab-wrap">
-                                    <img src="images/11.jpg" alt="news image" class="img-fluid">
+                                    <img src="{{url_for('static',filename='images/11.jpg')}}" alt="news image" class="img-fluid">
                                     <div class="ab-info-con">
                                         <h4>Cola Bottle</h4>
                                         <p class="price">$25.99</p>
@@ -234,7 +228,7 @@ section class="banner-bottom-wthree py-5" id="about">
                             </div>
                             <div class="col-md-3 ab-content">
                                 <div class="tab-wrap">
-                                    <img src="images/12.jpg" alt="news image" class="img-fluid">
+                                    <img src="{{url_for('static',filename='images/12.jpg')}}" alt="news image" class="img-fluid">
                                     <div class="ab-info-con">
                                         <h4>Kiwi Smoothie</h4>
                                         <p class="price">$35.99</p>
@@ -296,16 +290,16 @@ section class="banner-bottom-wthree py-5" id="about">
             </div>
             <div class="row news-grids text-center gallery-wrap">
                 <div class="col-md-3 gal-img">
-                    <a href="#gal1"><img src="images/g1.jpg" alt="news image" class="img-fluid"></a>
+                    <a href="#gal1"><img src="{{url_for('static',filename='images/g1.jpg')}}" alt="news image" class="img-fluid"></a>
                 </div>
                 <div class="col-md-3 gal-img">
-                    <a href="#gal2"><img src="images/g2.jpg" alt="news image" class="img-fluid"></a>
+                    <a href="#gal2"><img src="{{url_for('static',filename='images/g2.jpg')}}" alt="news image" class="img-fluid"></a>
                 </div>
                 <div class="col-md-3 gal-img">
-                    <a href="#gal3"><img src="images/g3.jpg" alt="news image" class="img-fluid"></a>
+                    <a href="#gal3"><img src="{{url_for('static',filename='images/g3.jpg')}}" alt="news image" class="img-fluid"></a>
                 </div>
                 <div class="col-md-3 gal-img">
-                    <a href="#gal4"><img src="images/g4.jpg" alt="news image" class="img-fluid"></a>
+                    <a href="#gal4"><img src="{{url_for('static',filename='images/g4.jpg')}}" alt="news image" class="img-fluid"></a>
                 </div>
 
             </div>
@@ -313,7 +307,7 @@ section class="banner-bottom-wthree py-5" id="about">
             <!-- popup-->
             <div id="gal1" class="pop-overlay animate">
                 <div class="popup">
-                    <img src="images/g1.jpg" alt="Popup Image" class="img-fluid" />
+                    <img src="{{url_for('static',filename='images/g1.jpg')}}" alt="Popup Image" class="img-fluid" />
 
                     <a class="close" href="#gallery">&times;</a>
                 </div>
@@ -323,7 +317,7 @@ section class="banner-bottom-wthree py-5" id="about">
             <!-- popup-->
             <div id="gal2" class="pop-overlay animate">
                 <div class="popup">
-                    <img src="images/g2.jpg" alt="Popup Image" class="img-fluid" />
+                    <img src="{{url_for('static',filename='images/g2.jpg')}}" alt="Popup Image" class="img-fluid" />
 
                     <a class="close" href="#gallery">&times;</a>
                 </div>
@@ -332,7 +326,7 @@ section class="banner-bottom-wthree py-5" id="about">
             <!-- popup-->
             <div id="gal3" class="pop-overlay animate">
                 <div class="popup">
-                    <img src="images/g3.jpg" alt="Popup Image" class="img-fluid" />
+                    <img src="{{url_for('static',filename='images/g3.jpg')}}" alt="Popup Image" class="img-fluid" />
 
                     <a class="close" href="#gallery">&times;</a>
                 </div>
@@ -341,7 +335,7 @@ section class="banner-bottom-wthree py-5" id="about">
             <!-- popup-->
             <div id="gal4" class="pop-overlay animate">
                 <div class="popup">
-                    <img src="images/g4.jpg" alt="Popup Image" class="img-fluid" />
+                    <img src="{{url_for('static',filename='images/g4.jpg')}}" alt="Popup Image" class="img-fluid" />
 
                     <a class="close" href="#gallery">&times;</a>
                 </div>
