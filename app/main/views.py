@@ -24,6 +24,16 @@ def orders(movie_id):
     '''
     return render_template('orders.html',id = orders_id)
 
+@main.route('/menu')
+@login_required
+def menu():
+    '''
+    Function that displays the menu
+    '''
+    
+
+    return render_template('menu.html')
+
 @main.route('/user/<uname>')
 def profile(uname):
     user = User.query.filter_by(username = uname).first()
