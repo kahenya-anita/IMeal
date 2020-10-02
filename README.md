@@ -27,7 +27,7 @@ Customers can;
 
 Administrators/Caterers can;
 * Login
-* Create, retrieve, update and delete meal options
+* Create, retrieve, update and delete meal options 
 * Setup daily menu
 * View customer orders
 
@@ -38,21 +38,21 @@ Run the following commands to have your project setup
 Clone the repository
 
 ```sh
-git clone https://github.com/Jpkat92/Book-A-Meal-Api.git
+git clone 
 ```
 
 Change to project directory
 
 ```sh
-cd Book-A-Meal-Api
+cd iMeal-Api
 ```
 
 Create and launch the virtual environment
 
 ```sh
 virtualenv venv
-Run 'source venv/bin/activate' on Linux or macOS
-Run 'venv\Scripts\activate' on Windows
+Run 'source virtual/bin/activate' on Linux or macOS
+Run 'virtual\Scripts\activate' on Windows
 ```
 
 Install dependencies
@@ -63,19 +63,18 @@ pip install -r requirements.txt
 
 ## How to  run tests
 
-Navigate to the `tests` directory
+Navigate to the `tests` directory 
 
 ```sh
 cd tests
 ```
-Run the tests
+Run the tests 
 
 ```sh
 pytest
 ```
 
 ## Link to live site
-(https://imeals.herokuapp.com/)
 
 
 ### Setting up environment variables
