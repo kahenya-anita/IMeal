@@ -39,7 +39,7 @@
       <li><a href="{{url_for('auth.logout')}}" class="scroll">Logout</a></li>
       {% endif %}
       {% if current_user.usertype == "Admin" %}
-      <li><a href="{{url_for('auth.logout')}}" class="scroll">Admin Dashboard</a></li>
+      <li><a href="{{url_for('main.admin_dashboard', uname=current_user.username)}}" class="scroll">Admin Dashboard</a></li>
       <li><a href="{{url_for('auth.logout')}}" class="scroll">Logout</a></li>
       {% endif %}
       {% else %}
@@ -56,5 +56,5 @@
       <li><a href="#contact" class="scroll">Contact</a></li>
 </nav>
   {% endif%}
-                   
+
 {% endblock %}

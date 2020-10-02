@@ -204,7 +204,7 @@ nav ul.menu li ul li a:hover {
     color: #ffc107;
 }
 
-/* Second, Third and more Tiers	
+/* Second, Third and more Tiers
  * We move the 2nd and 3rd etc tier dropdowns to the left
  * by the amount of the width of the first tier.
 */
@@ -405,7 +405,7 @@ li > a:only-child:after {
 /*-- //header --*/
 
 .main-content {
-    background: url(/app/static/images/banner1.jpg) center no-repeat;
+    background: url('../images/banner1.jpg') center no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -826,7 +826,7 @@ ul.tic-info li span {
 /*-- /testimonials --*/
 
 #testimonials {
-    background: url('static/images/banner3.jpg') center no-repeat;
+    background: url('../images/banner3.jpg') center no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -1094,7 +1094,7 @@ form#contactform1 {
 /* footer */
 
 .footer-content {
-    background: url(/app/static/images/banner2.jpg) center no-repeat;
+    background: url("../images/banner2.jpg") center no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;

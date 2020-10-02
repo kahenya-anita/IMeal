@@ -63,6 +63,7 @@ def update_profile(uname):
 
 @main.route('/user/admin/dashboard/<uname>', methods=['GET','POST'])
 def admin_dashboard(uname):
+    uname=uname
     title='Dashboard'
     total_orders = Orders.query.count()
     orders = Orders.query.all()
@@ -82,4 +83,3 @@ def admin_menu(uname):
 @login_required
 def admin_orders(uname):
     return render_template('admin/orders.html')
-
