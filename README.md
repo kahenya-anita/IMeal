@@ -38,21 +38,21 @@ Run the following commands to have your project setup
 Clone the repository
 
 ```sh
-git clone https://github.com/Jpkat92/Book-A-Meal-Api.git
+git clone 
 ```
 
 Change to project directory
 
 ```sh
-cd Book-A-Meal-Api
+cd iMeal-Api
 ```
 
 Create and launch the virtual environment
 
 ```sh
 virtualenv venv
-Run 'source venv/bin/activate' on Linux or macOS
-Run 'venv\Scripts\activate' on Windows
+Run 'source virtual/bin/activate' on Linux or macOS
+Run 'virtual\Scripts\activate' on Windows
 ```
 
 Install dependencies
