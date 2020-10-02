@@ -1,17 +1,10 @@
 {% extends 'base.html' %}
- {% import 'macros.html' as macro%} 
- {% block content %}
+ {% import 'macros.html' as macro%}
+ {% block styles%} {{ super() }}
 
-    <div class="container">
-      <div class="row">
-        
-          <h1>About IMEALS</h1>
-          <p>
-              Here at IMEALS we aim to provide the best services when it comes to food catering and user services
-          </p>
-        
-         
-        </div>
-      </div>
-</div>
+{% endblock %}
+
+ {% block content %}
+ 
+    
 {% endblock content %}

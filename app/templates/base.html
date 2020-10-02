@@ -3,7 +3,7 @@
 <!-- Navbar block -->
 
 {% block navbar %}
-{% include 'navbar.html' %}
+ {% include 'navbar.html' %}
 {% endblock %}
 
 <!DOCTYPE html>
@@ -20,14 +20,12 @@
       {% block head %}
       {{ super() }}
       <!-- Bootstrap core JavaScript -->
-      <script src="static/vendor/jquery/jquery.min.js"></script>
-      <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-      <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+      <script src="{{url_for('static',filename='vendor/jquery/jquery.min.js')}}"></script>
+      <script src="{{url_for('static',filename='vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+      <link href="{{url_for('static',filename='vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
       <!-- Custom fonts for this template -->
       <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
-      <!--Fonts-->
-      <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Courgette&family=Grenze+Gotisch:wght@800&family=New+Rocker&display=swap" rel="stylesheet" />
       {% endblock %}
 
     <title>

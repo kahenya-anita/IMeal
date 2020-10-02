@@ -4,55 +4,10 @@
 <!-- Styles block-->
 
 {% block styles%} {{ super() }}
-<link href="{{url_for('static',filename='vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
-<link href="{{url_for('static',filename='css/business-casual.min.css')}}" rel="stylesheet">
+
 {% endblock %}
 
 <!-- Content Block-->
 {% block content %}
-<h1 class="site-heading text-center text-white d-none d-lg-block">
-  <span class="site-heading-upper text-primary mb-3">Food Deliveries 4 You </span>
-  <span class="site-heading-lower">IMEALS ONLINE</span>
-</h1>
-<section class="page-section clearfix">
-  <div class="container">
-    <div class="intro">
-      <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{{url_for('static', filename='img/intro.jpg')}}" alt="">
-      <div class="intro-text left-0 text-center bg-faded p-5 rounded">
-        <h2 class="section-heading mb-4">
-          <span class="section-heading-upper">Fresh Deliveries</span>
-          <span class="section-heading-lower">Worth Every Coin</span>
-        </h2>
-        <p class="mb-3">When it comes to food orders and deliveries we got your back- we guarantee it!
-        </p>
-        <div class="intro-button mx-auto">
-          <a class="btn btn-primary btn-xl" href="#">Order Today!</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="page-section cta">
-  <div class="container">
-    <div class="row">
-      <div class="col-xl-9 mx-auto">
-        <div class="cta-inner text-center rounded">
-          <h2 class="section-heading mb-4">
-            <span class="section-heading-upper">Our Promise</span>
-            <span class="section-heading-lower">To You</span>
-          </h2>
-          <p class="mb-0">When you visit our site to start your order for the day, we are dedicated to providing you with friendly service, a welcoming atmosphere, and above all else, excellent products made with the highest quality ingredients. If you are not satisfied, please let us know and we will do whatever we can to make things right!</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<footer class="footer text-faded text-center py-5">
-  <div class="container">
-    <p class="m-0 small">Copyright &copy; Moringa Cyphers 2020</p>
-  </div>
-</footer>
 
 {% endblock %}
