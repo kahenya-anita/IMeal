@@ -1,0 +1,17 @@
+{% extends 'admin/admin-base.html' %}
+{% import 'bootstrap/wtf.html' as wtf %}
+{% block content%}
+    <div class="container">
+        <h2 class="text-center">Add Meal</h2>
+      <hr>
+      <form action="" method="post" class="form" role="form">
+        {{ form.csrf_token() }}
+       <d1>
+        {{ wtf.form_field(form.name, class='form-control') }}
+        {{ wtf.form_field(form.ingredients, class='form-control') }}
+        {{ wtf.form_field(form.cost, class='form-control') }}
+        </d1>
+        <p><input type='submit' class='btn btn-warning btn-block' placeholder="Add Meal">
+      </form>
+    </div>
+{% endblock%}
